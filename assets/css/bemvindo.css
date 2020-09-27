@@ -1,0 +1,32 @@
+.button {
+	margin-top: 10%;
+	background-color: #ff6961;
+	height: 10mm;
+	width: 100%;
+}
+.linetext{
+	display: block;
+	text-align: center;
+	font-size: 15px;
+	margin-left: 13%;
+	color: white;
+	line-height: 10mm;
+}
+a{
+	text-decoration: none;
+}
+.hide{
+	display: none;
+}
+h2{
+	text-align: center;
+	margin-top: 200px;
+	margin-left: 200px; 
+	font-size: 17pt;
+}
+p{
+	text-align: center;
+	font-size: 15pt;
+	line-height: 1.5; 
+	margin-left: 200px;
+}

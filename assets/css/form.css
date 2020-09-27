@@ -1,0 +1,129 @@
+html{
+	background-color: #fff;
+}
+img{
+	pointer-events: none;
+}
+.lateral{
+  position: fixed;
+  left: 50%;
+  top: 0px;
+  width: 42%;
+  height: 100%;
+  margin-left: -50%;  
+  margin-top: 0;
+  background: #04b054;
+  color: white;
+  text-align: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.lateral img{
+	margin-top: 21%;
+	height: 38%;
+	width: 43%;
+}
+.lateral h2{
+	margin-top: -2%;
+	font-size: 37pt;
+}
+.lateral a{
+	margin-top: 0;
+	color: white;
+	text-decoration: none;
+}
+.box {
+	width: 300px;
+	padding: 40px;
+	position: fixed;
+	top: 35%;
+	left: 60%;
+	text-align: center;
+	float: none;
+}
+.box input[type="text"],.box input[type="password"] {
+	border: 0;
+	background: #e3e3e3;
+	display: block;
+	margin: 15px auto;
+	padding: 16px 32px;
+	outline: none;
+	color: black;
+	transition: 0.20s;
+	font-size: 14pt;
+	border-radius: 10px;
+	width: 380px;
+}
+.box h1{
+	margin-left: 55px;
+	color: #04b054;
+	font-weight: 500;
+}
+.box input[type="text"]:focus, .box input[type="password"]:focus{
+	width: 400px;
+}
+.box input[type="submit"]{
+	border: 0;
+	background: #04b054;
+	display: block;
+	margin: 20px auto;
+	margin-left: 140px;
+	text-align: center;
+	padding: 15px 55px;
+	color: white;
+	border-radius: 25px;
+	transition: 0.25s;
+	cursor: pointer;
+	font-size: 15pt;
+}
+.box input[type="submit"]:hover{
+	background: #0ddb6d;
+	color: white;
+}
+.box input[type="submit"]{
+	border: 0;
+	background: #04b054;
+	display: block;
+	text-align: center;
+	padding: 15px 55px;
+	color: white;
+	border-radius: 25px;
+	transition: 0.25s;
+	cursor: pointer;
+	font-size: 15pt;
+}
+.box input[type="submit"]:hover{
+	background: #0ddb6d;
+	color: white;
+}
+.box button{
+	border: 0;
+	background: #04b054;
+	text-align: center;
+	padding: 15px 55px;
+	color: white;
+	border-radius: 25px;
+	transition: 0.25s;
+	cursor: pointer;
+	font-size: 15pt;
+}
+.box button:hover{
+	background: #0ddb6d;
+	color: white;
+}
+
+.box a{ 
+	text-decoration: none;
+	color: white;
+ }
+.box p{
+	color: red;
+	font-size: 12pt;
+}
+.box img {
+	height: 165px;
+	width: 165px;
+	top: -40%;
+	left: 46%;
+	position: absolute;
+}

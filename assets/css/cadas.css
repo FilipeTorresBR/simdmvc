@@ -1,0 +1,78 @@
+label{
+  text-align: left;
+}
+/* Fundo */
+.box {
+  margin-left: auto;
+  border-radius: 5px;
+  padding: 50px;
+  font-size: 14pt;
+  background-color: #dedede;
+}
+/* Entradas */
+.box input[type="text"], .box input[type="number"], .box input[type="password"], .formcad input[type="date"], .formcad select, .formcad input[type="email"]{
+  padding: 17px;
+  width: 320px;
+  border-radius: 5px;
+  border: 0;
+  font-size: 12pt;
+  background: #fff;
+  align-content: center;
+}
+/* Botao de cadastro */
+.box button {
+  background: #008CBA;
+  padding: 12px 30px;
+  border: 0;
+  text-align: left;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15pt;
+}
+/* Icones */
+.box i{
+  font-size: 1.65em;
+}
+.box p{
+  color: red;
+  font-size: 12pt;
+}
+#user_form{
+  margin-top: 5%;
+}
+
+.formcad input[type="text"], .formcad input[type="number"], .formcad input[type="date"], .formcad select, .formcad input[type="email"]{
+  width: 290px;
+  padding: 14px;
+  border-radius: 2px;
+}
+
+.formcad .campo{
+  padding: 9px;
+  float: left;
+  margin-right: 1em;
+  line-height: 1.5;
+}
+.formcad h1{
+  font-size: 20pt;
+  text-align: center;
+}
+.dados_serv span{
+  font-size: 15pt;
+}
+.dados_inst span {
+  display: inline;
+  font-size: 15pt;
+}
+.formcad i{
+  font-size: 1.38em;
+  float: left;
+  margin-right: 10px;
+}
+
+.formcad hr{
+  padding: 2px;
+  background-color: #04b054;
+  border:0;
+}

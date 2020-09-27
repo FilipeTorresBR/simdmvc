@@ -1,0 +1,144 @@
+.content-table{
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 0.9em;
+	min-width: 400px;
+	margin-left: 17vw;
+	margin-top: 13vh;
+	white-space: nowrap;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	border-radius: 5px 5px 0 0;	
+	z-index: 6;
+}
+.content-table thead{
+	color: white;
+	border-radius: 5px 5px 0 0;
+}
+.content-table thead th{
+	background-color: #00c952;
+	color: #fff;
+	text-align: left;
+	font-weight: bold;
+	top: 11vh;
+}
+.content-table th,
+.content-table td{
+	padding: 16px 16px;
+}
+.content-table tbody tr{
+	border-bottom: 1px solid #ddd;
+}
+.content-table tbody tr:nth-of-type(even){
+	background-color: #f3f3f3;
+}
+.content-table tbody tr:nth-of-type(odd){
+	background-color: #fff;
+}
+.content-table tbody tr:last-of-type{
+	border-bottom: 2px solid #00c952;
+}
+/*.content-table thead th .thsticky {
+	left: 230px;
+}
+.content-table tbody td .tdsticky{
+	position: sticky; 
+	left: 230px; 
+	background: inherit;
+	color: black;
+}
+*/
+.list-options-position{
+	top: 11.2vh;
+	left: 17vw;
+	position: relative;
+}
+.btn-pattern{
+	padding: 12px 12px;
+	margin: 0px;
+	text-decoration: none;
+	font-size: 0.9em;
+	color: white;
+	border-radius: 5px;
+	border: 0px;
+}
+.pagination{
+	margin-left: 17vw; 
+	margin-top: 40px;
+	position: relative;
+	margin-bottom: 5vh;
+}
+.pagination #displaing-results{
+	margin-right: 10vw; 
+	font-size: 0.9em;
+}
+.red{
+	background-color: #ff6961;
+}
+.red:hover{
+	background-color: #ff8b8b;
+	cursor: pointer;
+}
+.green{
+	background-color: #00c952;
+}
+.green:hover{
+	background-color: #21f376;
+	cursor: pointer;
+}
+.blue{
+	background-color: #008CBA;
+}
+.blue:hover{
+	background-color: #36bae6;
+	cursor: pointer;
+}
+.btn-pattern .blue .pg{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.selected_pg{
+	background-color: transparent;
+	border: 2px solid #008CBA;
+	color: #008CBA;
+	cursor: pointer;
+}
+#red_probatorio{
+  color: #ff6961;
+  cursor: default;
+  font-weight: bold
+}
+#green_probatorio{
+  color: #04b054;
+  font-weight: bold
+}
+@keyframes animation {
+  from {left: 0px; background-color: transparent;color: transparent;}
+  to {left: 35px;}
+}
+.tooltip {
+	display: inline-block;
+  border: 0 !important;
+  border-radius: 5px;
+}
+
+.tooltip .tooltiptext {
+  position: absolute;
+  visibility: hidden;
+  width: 150px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  top: -5px;
+  left: 45px;
+  background-color: white;
+  font-weight: bold;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  animation-name: animation;
+  animation-duration: 0.25s;  
+  animation-delay: 0s;
+  animation-fill-mode: backwards;
+  pointer-events: none;
+}

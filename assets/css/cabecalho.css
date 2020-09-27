@@ -1,0 +1,28 @@
+body{
+	font-family: Arial, Sans-Serif;
+}
+#relatorio-paisagem-container {
+	max-width:180mm;;
+	margin: 0 auto;
+}
+
+#ifpa{
+	float: right;
+	width: 22%;
+	margin-top: 4%;
+
+}
+
+#republica{
+	float: left;
+	width: 14%;
+	padding-left: 40px;
+	margin-top: 4%;
+}
+
+#texto{
+	margin-top: 0%;
+	font-size: 11px;
+	text-align: center;
+}
+
