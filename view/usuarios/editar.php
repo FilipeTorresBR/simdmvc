@@ -5,17 +5,15 @@
 	<h2>Editar Dados Usuário</h2>
   </header>
 	<div class="w3-contant" style="margin-left:70px;">
-	  <form class="box" action="?c=<?php echo base64_encode("Usuario"); ?>&a=<?php echo base64_encode("alterarInformacoes") ?>" method="post" enctype="multipart/form-data">
-		  <input type="hidden" name="idusuario" id="idusuario">
-		<label for="nomecompleto">Nome Completo do Servidor:</label><br>
-		  <input type="text" name="nomecompleto" id="nomecompleto" placeholder="Nome completo" required /><br>
-		<label for="usuario">Nome de usuário:</label><br>
+	  <form class="box" action="?c=<?php echo base64_encode("Usuarios"); ?>&a=<?php echo base64_encode("alterarInformacoes") ?>" method="post" enctype="multipart/form-data">
+		  <input type="hidden" name="id" id="id">
+		<label for="nomecompleto">Nome Completo:</label><br>
+		  <input type="text" name="nome" id="nome" placeholder="Nome completo" required /><br>
+		<label for="usuario">Usuário:</label><br>
 		  <input type="text" name="usuario" id="usuario" placeholder="nome.sobrenome" required/><br>
-		<label for="confirm-pass">Confirmar Senha:</label><br>
-		  <input type="password" name="confirm-pass" minlength="8" id="confirm-pass"  placeholder="Digite sua senha" required/><br>
-		<label for="tipo">Nível de Acesso:</label><br>
-		  <input type="radio" name="tipo" id="comum"> Comum
-		  <input type="radio" name="tipo" id="adm"> Administrador 
+		<label for="administrador">Nível de Acesso:</label><br>
+		  <input type="radio" name="administrador" id="comum" value="0"> Comum
+		  <input type="radio" name="administrador" id="adm" value="1"> Administrador 
 	</div>
 		<footer class="w3-container" style="padding-bottom: 20px;">
 		  <button type="submit" class="btn-pattern green" id="editConfirmOK">Editar</button>

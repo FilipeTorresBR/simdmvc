@@ -15,8 +15,8 @@
 		<label for="confirm-pass-add">Confirmar Senha:</label><br>
 		  <input type="password" name="confirm-pass-add" minlength="8" id="confirm-pass-add" onchange="validatepass();" placeholder="Digite novamente sua senha" required/><br>
 		<label for="tipo-add">Nível de Acesso:</label><br>
-		  <input type="radio" name="tipo-add" id="comum-add" value="Comum" required> Comum
-		  <input type="radio" name="tipo-add" id="adm-add" value="Administrador" required> Administrador 
+		  <input type="radio" name="tipo-add" id="comum-add" value="0" required> Comum
+		  <input type="radio" name="tipo-add" id="adm-add" value="1" required> Administrador 
 	</div>
 		<footer class="w3-container" style="padding-bottom: 20px;">
 		  <button type="submit" class="edit green" id="addConfirm">Cadastrar</button>

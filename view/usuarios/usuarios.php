@@ -25,20 +25,20 @@
 	  <td <?php echo $display;?>>
 		<div class="tooltip green">
 		  <span class="tooltiptext">Editar Usuário</span>
-		  <a href="#" id="trigger-modal" edit-confirm="Tem Certeza?" data-idusuario="<?php echo $r->idusuario; ?>" data-nomecompleto="<?php echo $r->nomecompleto; ?>" data-usuario="<?php echo $r->nome; ?>" data-tipo="<?php echo $r->tipo; ?>" class="btn-pattern green">
+		  <a href="#" id="trigger-modal" edit-confirm="Tem Certeza?" data-id="<?php echo $r->id; ?>" data-nome="<?php echo $r->nome; ?>" data-usuario="<?php echo $r->usuario; ?>" data-administrador="<?php echo $r->administrador; ?>" class="btn-pattern green">
 			<span class="fa fa-pencil-alt"></span>
 		  </a>
 		</div>
 		<div class="red tooltip">
 		  <span class="tooltiptext">Excluir Usuário</span>
-		  <a delete-confirm="Tem Certeza?" data-id = "<?php echo $r->idusuario ?>" class="btn-pattern red">
+		  <a delete-confirm="Tem Certeza?" data-id = "<?php echo $r->id ?>" class="btn-pattern red">
 			<i class="fa fa-trash"></i>
 		  </a>
 		</div>
 	  </td>
-	  <td class="tdsticky"><?php echo $r->nomecompleto; ?></td>
-	  <td><?php echo $r->nome; ?></td> 
-	  <td><?php echo $r->tipo; ?></td>
+	  <td class="tdsticky"><?php echo $r->nome; ?></td>
+	  <td><?php echo $r->usuario; ?></td> 
+	  <td><?php echo $r->administrador; ?></td>
 	</tr>    
     <?php endforeach; ?>
   </tbody>

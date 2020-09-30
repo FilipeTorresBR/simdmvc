@@ -21,18 +21,18 @@ $(document).ready(function(){
 
     $('#edit-modal').css('display','block');
       var button = $(this);
-      var valorId = button.data('idusuario');
-      var valorNomeCompleto = button.data('nomecompleto');
-      var valorLogin = button.data('usuario');
-      var valorTipo = button.data('tipo');
+      var valorId = button.data('id');
+      var valorNome = button.data('nome');
+      var valorUsuario = button.data('usuario');
+      var valorTipo = button.data('administrador');
 
       var modal = $(document);   
-      modal.find('#idusuario').val(valorId);
-      modal.find('#nomecompleto').val(valorNomeCompleto);
-      modal.find('#usuario').val(valorLogin);
-      modal.find('#tipo').val(valorTipo);
+      modal.find('#id').val(valorId);
+      modal.find('#nome').val(valorNome);
+      modal.find('#usuario').val(valorUsuario);
+      modal.find('#administrador').val(valorTipo);
 
-      if (valorTipo == "Administrador") {
+      if (valorTipo == "1") {
         modal.find('#adm').prop("checked", true);
         modal.find('#adm').val(valorTipo);
       }else{

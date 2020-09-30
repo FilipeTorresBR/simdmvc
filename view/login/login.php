@@ -16,7 +16,7 @@ session_start();
     <h2>SIMD</h2>
     <a href="sobre.html">Sobre nós</a>
 	</div>
-	<form class="box" action="?c=<?php echo base64_encode('Login'); ?>&a=<?php echo base64_encode('Entrar'); ?>" enctype="multipart/form-data" method="POST">
+	<form class="box" action="?c=<?php echo base64_encode('Login'); ?>&a=<?php echo base64_encode('Entrar'); ?>" method="POST">
     <img src="assets/img/if.png" alt="Instituto Federal do Pará">
       <input type="text" name='usuario' id="nome" placeholder="Usuário" required />
       <input type="password" name="pass" id="senha" placeholder="Senha" required />

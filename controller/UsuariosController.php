@@ -14,16 +14,16 @@ class UsuariosController{
 		require_once "view/usuarios/editar.php";
 	}
 	
-	public function alterarInformacoes(){		
-		$idusuario = filter_input(INPUT_POST, 'idusuario', FILTER_SANITIZE_NUMBER_INT);
-		$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
-		$usuario = filter_input(INPUT_POST, 'usuarios', FILTER_SANITIZE_STRING);
-		$senha = md5(filter_input(INPUT_POST, 'confirm-pass', FILTER_SANITIZE_STRING));
-		$tipo = filter_input(INPUT_POST, 'tipo', FILTER_SANITIZE_STRING);
+	public function alterarInformacoes(){
+		$dados = new Usuarios();
 
-		header("Location: https://google.com");
+		$id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+		$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
+		$usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
+		$administrador = filter_input(INPUT_POST, 'administrador', FILTER_SANITIZE_STRING);
+
+		$dados = $this->model->alterarInformacoes($nome, $usuario, $administrador, $id);
 		}
 }
 
 ?>
-
