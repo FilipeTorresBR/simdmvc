@@ -21,7 +21,7 @@ $count = mysqli_num_rows($probatorio);
 <br><br><br><br><br>
 
 
-<h2>Olá, <?php echo $_SESSION['nomecompleto'].'!';?>
+<h2>Olá, <?php echo $_SESSION['nome'].'!';?>
 
 </h2>
 <p>Bem vindo(a) ao Sistema Interno de Manipulação de Dados<br> (SIMD). </p>

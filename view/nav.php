@@ -2,7 +2,7 @@
 if(!isset($_SESSION["id"])){
 	header("Location: ?c=".base64_encode('Login'));
 }
-if ($_SESSION['tipo'] == "Administrador") {
+if ($_SESSION['administrador'] == "1") {
 	$display = "true";
 }else{
 	$display = "false";
@@ -27,13 +27,13 @@ if ($_SESSION['tipo'] == "Administrador") {
 				<input type="text" name="search" class="search" placeholder="Pesquisar por nome ou SIAPE" autocomplete="off" required>
 				<button type="submit" class="search-button fa fa-search"></button>
 			</form>
-				<div onmouseover="MostrarUser()" onmouseleave="OcultarUser()"><button type="button" class="user-icon">FT</button>
+				<!--div onmouseover="MostrarUser()" onmouseleave="OcultarUser()"><button type="button" class="user-icon">FT</button>
 					<ul class="user-drop">
 						<li>Alterar dados</li>
 						<li>Escolher tema</li>
 						<li>Sair</li>
 					</ul>
-				</div>
+				</div-->
 		</header>
 
 		<div class="brand">

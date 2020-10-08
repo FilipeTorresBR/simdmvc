@@ -18,7 +18,7 @@ session_start();
 	</div>
 	<form class="box" action="?c=<?php echo base64_encode('Login'); ?>&a=<?php echo base64_encode('Entrar'); ?>" method="POST">
     <img src="assets/img/if.png" alt="Instituto Federal do Pará">
-      <input type="text" name='usuario' id="nome" placeholder="Usuário" required />
+      <input type="text" name='usuario' id="usuario" placeholder="Usuário" required />
       <input type="password" name="pass" id="senha" placeholder="Senha" required />
       <input type="submit" value="Entrar" />
     </form>

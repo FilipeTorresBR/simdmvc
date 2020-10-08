@@ -13,7 +13,7 @@ class Login{
 
 	public function Entrar($usuario, $senha){
 		try{
-			$sql = $this->pdo->prepare("SELECT * FROM usuario WHERE nome = ? AND senha = ?");
+			$sql = $this->pdo->prepare("SELECT * FROM usuario WHERE usuario = ? AND senha = ?");
 			$sql->execute(array($usuario, $senha));
 			return $sql->fetch(PDO::FETCH_OBJ);
 		}catch(Throwable $t){
@@ -23,12 +23,12 @@ class Login{
 	public function Sessao($entrar){
 		try{
 			if ($entrar != null) {
-				$_SESSION['id'] = $entrar->idusuario;
+				$_SESSION['id'] = $entrar->id;
 				$_SESSION['nome'] = $entrar->nome;
-				$_SESSION['nomecompleto'] = $entrar->nomecompleto;
-				$_SESSION['tipo'] = $entrar->tipo;
+				$_SESSION['usuario'] = $entrar->usuario;
+				$_SESSION['administrador'] = $entrar->administrador;
 
-				if ($entrar->tipo) {
+				if ($entrar->administrador) {
 					header("Location: ?c=".base64_encode('Home'));
 
 				}else{

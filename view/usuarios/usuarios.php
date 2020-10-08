@@ -31,7 +31,7 @@
 		</div>
 		<div class="red tooltip">
 		  <span class="tooltiptext">Excluir Usuário</span>
-		  <a delete-confirm="Tem Certeza?" data-id = "<?php echo $r->id ?>" class="btn-pattern red">
+		  <a delete-confirm="Tem Certeza?" data-id = "<?php echo $r->id ?>" data-nome="<?php echo $r->nome; ?>" data-usuario="<?php echo $r->usuario; ?>" class="btn-pattern red">
 			<i class="fa fa-trash"></i>
 		  </a>
 		</div>

@@ -11,6 +11,7 @@ class LoginController{
 	public function Index(){
 		session_destroy();
 		require_once "view/login/login.php";
+		include_once "cu.php";
 	} 
 	
 	public function Entrar(){

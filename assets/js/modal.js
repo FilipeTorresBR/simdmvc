@@ -9,6 +9,18 @@ $(document).ready(function(){
     });
 
     $('#excluir-usuario').css('display','block');
+
+    var button = $(this);
+    var valorId = button.data('id');
+    var valorNome = button.data('nome');
+    var valorUsuario = button.data('usuario');
+
+    var modal = $(document);   
+    modal.find('#nome-del').text(valorNome);
+    modal.find('#usuario-del').text(valorUsuario);
+    modal.find('#id-input').val(valorId);
+    modal.find('#nome-input').val(valorNome);
+    modal.find('#usuario-input').val(valorUsuario);
   });
 
   $('a[edit-confirm]').click(function(event){
@@ -61,7 +73,7 @@ $(document).ready(function(){
   });
 
 
-  $('#true').click(function(event){
+  $('#true').click(function(event) {
     $('#add-user-modal').css('display','block');
     
     $('#cancelar-add').click(function() {
