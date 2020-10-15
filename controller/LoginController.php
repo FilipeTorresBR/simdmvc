@@ -11,14 +11,13 @@ class LoginController{
 	public function Index(){
 		session_destroy();
 		require_once "view/login/login.php";
-		include_once "cu.php";
 	} 
 	
 	public function Entrar(){
 		$entrar = new Login();
 
-		$usuario = $_REQUEST['usuario'];
-		$senha = md5($_REQUEST['pass']);
+		$usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
+		$senha = md5(filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_STRING));
 
 		$entrar = $this->model->Entrar($usuario, $senha);
 

@@ -1,44 +1,167 @@
-<?php 
-session_start();
-include_once ("../login/conexao.php");
+<div id="edit-worker-modal" class="w3-modal" style="z-index: 22;">
+	<div class="w3-modal-content" style="background: #dedede;" >
+		<header class="w3-container green" style="color: white; background-color: #00c952; cursor: default;">
+			<span id="sair-edit" class="w3-button w3-display-topright">&times;</span>
+			<h2>Editar dados do servidor</h2>
+		</header>
+			<div class="w3-contant">
+				<div class="box formcad">
+					<form name="editar" id="editar" action="?c=<?php echo base64_encode("Servidores"); ?>&a=<?php echo base64_encode("atualizar") ?>" method="POST">
+						<input type="hidden" name="id-edit" id="id-edit">
+						<div class="campo">
+							<label for="nome-edit">Nome do Servidor:</label><br>
+							<input type="text" name="nome-edit" id="nome-edit" style="width: 59em" required>
+						</div>
 
-$id = $_POST['id-edit'];
+						<div class="campo">
+							<label for="rg-edit">RG:</label><br>
+							<input type="text"  name="rg-edit" id="rg-edit" required>
+						</div>
 
-$nome = $_POST['servidor-edit'];
-$rg = $_POST['rg-edit'];
-$cpf = $_POST['cpf-edit'];
-$titulo_eleitor = $_POST['titulo_eleitor-edit'];
-$mae = $_POST['mae-edit'];
-$pai = $_POST['pai-edit'];
-$data_nascimento = date('Y-m-d', strtotime($_POST['data_nascimento-edit']));
-$estado = $_POST['estado-edit'];
-$cidade = $_POST['cidade-edit'];
-$bairro = $_POST['bairro-edit'];
-$rua = $_POST['rua-edit'];
-$numero = $_POST['numero-edit'];
-$telefone1 = $_POST['telefone1-edit'];
-$telefone2 = $_POST['telefone2-edit'];
-$siape = $_POST['siape-edit'];
-$email = $_POST['email-edit'];
-$escolaridade = $_POST['escolaridade-edit'];
-$setor = $_POST['setor-edit'];
-$lotacao = $_POST['lotacao-edit'];
-$quadro = $_POST['quadro-edit'];
-$cargo = $_POST['cargo-edit'];
-$regime = $_POST['regime-edit'];
-$data_posse = date('Y-m-d', strtotime($_POST['data_posse-edit']));
-$data_exercicio = date('Y-m-d', strtotime($_POST['data_exercicio-edit']));
+						<div class="campo">
+							<label for="cpf-edit">CPF:</label><br>
+							<input type="text" name="cpf-edit" id="cpf-edit" required>
+						</div>
 
+						<div class="campo">
+							<label for="titulo_eleitor-edit">Título de Eleitor:</label><br>
+							<input type="text" name="titulo_eleitor-edit" id="titulo_eleitor-edit" required>
+						</div>
 
-$query = mysqli_query($con, "UPDATE servidor SET nome = '$nome', rg = '$rg', cpf = '$cpf', titulo_eleitor = '$titulo_eleitor', mae = '$mae', pai = '$pai', data_nascimento = '$data_nascimento', estado = '$estado', cidade = '$cidade', bairro = '$bairro', rua = '$rua', numero='$numero', telefone1 = '$telefone1', telefone2 = '$telefone2', siape = '$siape', email = '$email', escolaridade = '$escolaridade', id_setor = '$setor', id_lotacao = '$lotacao', quadro = '$quadro', id_cargo = '$cargo', regime = '$regime', data_posse = '$data_posse', data_exercicio = '$data_exercicio' WHERE siape = '$id'");
+						<div class="campo">
+							<label for="mae-edit">Nome da Mãe:</label><br>
+							<input type="text" name="mae-edit" id="mae-edit">
+						</div>
 
-$query2 = mysqli_query($con, "UPDATE probatorio SET siape = '$siape' WHERE siape = '$id'");
+						<div class="campo">
+							<label for="pai-edit">Nome do Pai:</label><br>
+							<input type="text" name="pai-edit" id="pai-edit">
+						</div>
 
-if(mysqli_insert_id($con)) {
-		$_SESSION['msg'] = "<p style='color:red;'> Não foi possível alterar os dados do servidor.</p>";
-		header("Location: edita.php?deumerda$id");
-	}else{
-		$_SESSION['msg'] = "<p style='color:green;'> Os dados do servidor foram atualizados com sucesso!</p>";
-		header("Location: edita.php?blz$id");
-}
-?>	
+						<div class="campo">
+							<label for="data_nascimento-edit">Data de Nascimento:</label><br>
+							<input type="date" name="data_nascimento-edit" id="data_nascimento-edit" required>
+						</div>
+
+						<div class="campo">
+							<label for="estado-edit">Estado:</label><br>
+							<input type="text" name="estado-edit" id="estado-edit">
+						</div>
+
+						<div class="campo">
+							<label for="cidade-edit">Cidade:</label><br>
+							<input type="text" name="cidade-edit" id="cidade-edit">
+						</div>
+
+						<div class="campo">
+							<label for="bairro-edit">Bairro:</label><br>
+							<input type="text" name="bairro-edit" id="bairro-edit">
+						</div>
+
+						<div class="campo">
+							<label for="rua-edit">Rua:</label><br>
+							<input type="text" name="rua-edit" id="rua-edit">
+						</div>
+
+						<div class="campo">
+							<label for="numero-edit">Número:</label><br>
+							<input type="text"  name="numero-edit" id="numero-edit">
+						</div>
+
+						<div class="campo">
+							<label for="telefone1-edit">Telefone Principal:</label><br>
+							<input type="text" maxlength="14" name="telefone1-edit" id="telefone1-edit">
+						</div>
+
+						<div class="campo">
+							<label for="telefone2-edit">Telefone Secundário:</label><br>
+							<input type="text" maxlength="14" name="telefone2-edit" id="telefone2-edit">
+						</div>
+
+						<div class="campo">
+							<label for="siape-edit">SIAPE:</label><br>
+							<input type="text"  name="siape-edit" id ="siape-edit" required>
+						</div>
+
+						<div class="campo">
+							<label for="email-edit">EMAIL:</label><br>
+							<input type="email" name="email-edit" id="email-edit">
+						</div>
+
+						<div class="campo">
+							<label for="escolaridade-edit">Escolaridade:</label><br>
+							<select name="escolaridade-edit" id="escolaridade-edit" required>
+								<option value="">Selecione</option>
+								<option value="FUNDAMENTAL">FUNDAMENTAL</option>
+								<option value="MÉDIO">MÉDIO</option>
+								<option value="SUPERIOR">SUPERIOR</option>
+							</select>
+						</div>
+
+						<div class="campo">
+							<label for="setor-edit">Setor:</label><br>
+							<select name="setor-edit" id="setor-edit" required>
+								<option value="">Selecione</option>
+								<?php foreach ($this->setor->Listar() as $s): ?>
+								<option value="<?php echo $s->id;?>"><?php echo $s->nome;?></option>
+								<?php endforeach; ?>
+							</select>
+						</div>
+
+						<div class="campo">
+							<label for="lotacao-edit">Lotação:</label><br>
+							<select name="lotacao-edit" id="lotacao-edit" required>
+								<option value="">Selecione</option>
+								<?php foreach($this->lotacao->Listar() as $s): ?>
+								<option value="<?php echo $s->id;?>"><?php echo $s->nome;?></option>
+							<?php endforeach; ?>
+							</select>
+						</div>
+
+						<div class="campo">
+							<label for="quadro-edit">Quadro:</label><br>
+							<select name="quadro-edit" id="quadro-edit" required>
+								<option value="">Selecione</option>
+								<option value="TAE">TAE</option>
+								<option value="DOC">DOC</option>
+							</select>
+						</div>
+						<div class="campo">
+							<label>Cargo:</label><br> 
+							<select name="cargo-edit" id="cargo-edit" required>
+								<option value="">Selecione</option>
+								<?php foreach($this->cargo->Listar() as $s): ?>
+								<option value="<?php echo $s->id;?>"><?php echo $s->nome;?></option>
+							<?php endforeach; ?>
+							</select>
+						</div>
+
+						<div class="campo">
+							<label for="regime-edit">Regime:</label><br>
+							<select name="regime-edit" id="regime-edit" required>
+								<option value="">Selecione</option>
+								<option value="20H">20H</option>
+								<option value="40H">40H</option>
+								<option value="DE">DE</option>
+							</select>
+						</div>
+
+						<div class="campo">
+							<label for="data_posse-edit">Data de Posse:</label><br>
+							<input type="date" name="data_posse-edit" id="data_posse-edit" required>
+						</div>
+
+						<div class="campo">
+							<label for="data_exercicio-edit">Data de Exercício:</label><br>
+							<input type="date" name="data_exercicio-edit" id="data_exercicio-edit" required>
+						</div>
+				</div>
+			</div>
+		<footer class="w3-container" style="padding-bottom: 20px;">
+			<button type="submit" class="btn-pattern green" id="addConfirm">Salvar</button>
+			<button type="button" class="btn-pattern blue" id="cancelar-edit" data-dismiss="modal">Cancelar</button>
+		</footer>
+					</form>
+	</div>
+<br><br><br><br><br><br><br><br><br><br>
+</div>

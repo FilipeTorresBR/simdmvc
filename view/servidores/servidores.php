@@ -1,16 +1,3 @@
-<?php
-$pagina_atual = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);		
-$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
-
-
-if(!empty($_GET['choose-results'])){
-	$qnt_result_pg = filter_input(INPUT_GET,'choose-results', FILTER_SANITIZE_NUMBER_INT);	
-}else{
-	$qnt_result_pg = 20;
-}
-
-$inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +15,7 @@ $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
 <div class="list-options-position">
 	<form>
 		<a href="pessoal.php" class="btn-pattern blue">Mostrar dados Pessoais</a>
-		<a <?php echo $display;?> href="#" class="btn-pattern green">Cadastrar</a>
+		<a <?php echo $display;?> href="#" id="cadastrar" class="btn-pattern green">Cadastrar</a>
 		<label for="choose-results"></label>
 		<select name="choose-results" class="choose-results" required>
 			<option value="20" <?php if($qnt_result_pg == "20"){echo "selected";}?>>Exibir 20 resultados</option>
@@ -59,20 +46,17 @@ $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
 	</thead>
 	<tbody>
 		<?php 
-			$x = $inicio; 
 			foreach ($this->model->Listar() as $r): 
-			$x ++;
 		?>
 		<tr>
 			<td class="icon" <?php echo $display;?>>
 				<div class="tooltip green">
 					<span class="tooltiptext">Editar dados</span>
-					<a href="#" data-servidor="<?php echo $r->Servidor; ?>" data-rg="<?php echo $r->rg; ?>" data-cpf="<?php echo $r->cpf; ?>" data-titulo_eleitor="<?php echo $r->titulo_eleitor; ?>" data-mae="<?php echo $r->mae; ?>" data-pai="<?php echo $r->pai; ?>" data-data_nascimento="<?php echo $r->data_nascimento; ?>" data-escolaridade="<?php echo $r->escolaridade; ?>" data-email="<?php echo $r->email; ?>" data-estado="<?php echo $r->estado; ?>" data-cidade="<?php echo $r->cidade; ?>" data-bairro="<?php echo $r->bairro; ?>" data-rua="<?php echo $r->rua; ?>" data-numero="<?php echo $r->numero; ?>" data-siape="<?php echo $r->siape; ?>" data-data_posse="<?php echo $r->data_posse; ?>" data-data_exercicio="<?php echo $r->data_exercicio; ?>" data-telefone1="<?php echo $r->telefone1; ?>" data-telefone2="<?php echo $r->telefone2; ?>" data-lotacao="<?php echo $r->id_lotacao; ?>" data-quadro="<?php echo $r->quadro; ?>" data-cargo="<?php echo $r->id_cargo; ?>" data-regime="<?php echo $r->regime; ?>" data-setor="<?php echo $r->id_setor; ?>" edit-servidor="tem certeza?" class="btn-pattern green">
+					<a href="#" data-id="<?php echo $r->id; ?>" data-nome="<?php echo $r->Servidor; ?>" data-rg="<?php echo $r->rg; ?>" data-cpf="<?php echo $r->cpf; ?>" data-titulo_eleitor="<?php echo $r->titulo_eleitor; ?>" data-mae="<?php echo $r->mae; ?>" data-pai="<?php echo $r->pai; ?>" data-data_nascimento="<?php echo $r->data_nascimento; ?>" data-escolaridade="<?php echo $r->escolaridade; ?>" data-email="<?php echo $r->email; ?>" data-estado="<?php echo $r->estado; ?>" data-cidade="<?php echo $r->cidade; ?>" data-bairro="<?php echo $r->bairro; ?>" data-rua="<?php echo $r->rua; ?>" data-numero="<?php echo $r->numero; ?>" data-siape="<?php echo $r->siape; ?>" data-data_posse="<?php echo $r->data_posse; ?>" data-data_exercicio="<?php echo $r->data_exercicio; ?>" data-telefone1="<?php echo $r->telefone1; ?>" data-telefone2="<?php echo $r->telefone2; ?>" data-lotacao="<?php echo $r->id_lotacao; ?>" data-quadro="<?php echo $r->quadro; ?>" data-cargo="<?php echo $r->id_cargo; ?>" data-regime="<?php echo $r->regime; ?>" data-setor="<?php echo $r->id_setor; ?>" edit-servidor="tem certeza?" class="btn-pattern green">
 						<i class="fa fa-pencil-alt"></i>
 					</a>
 				</div>
 			</td>
-			<td><?php echo $x; ?></td>
 			<td class="tdsticky"><?php echo $r->Servidor; ?></td>
 			<td><?php echo $r->siape;?></td>
 			<td><?php echo $r->Cargo;?></td> 

@@ -84,7 +84,7 @@ $(document).ready(function(){
     });
   });
 
-  $('.cadastro_btn').click(function(event){
+  $('#cadastrar').click(function(event){
     $('#add-worker-modal').css('display','block');
     
     $('#cancelar-add').click(function() {
@@ -110,16 +110,19 @@ document.onkeydown = function(evt) {
   $('a[edit-servidor]').click(function(event){
     $('#cancelar-edit').click(function() {
       $('#edit-worker-modal').css('display','none');
+      $("#form_field").chosen("destroy");
     });
     $('#sair-edit').click(function() {
       $('#edit-worker-modal').css('display','none');
+      $("#form_field").chosen("destroy");
     });
 
     $('#edit-worker-modal').css('display','block');
 
 
       var button = $(this);
-      var valorServidor = button.data('servidor');
+      var valorId = button.data('id');
+      var valorNome = button.data('nome');
       var valorRg = button.data('rg');
       var valorCpf = button.data('cpf');
       var valorTituloEleitor = button.data('titulo_eleitor');
@@ -144,9 +147,11 @@ document.onkeydown = function(evt) {
       var valorDataPosse = button.data('data_posse');
       var valorDataExercicio = button.data('data_exercicio');
 
+      //alert(valorSetor);
+
       var modal = $(document);   
-      modal.find('#id-edit').val(valorSiape);
-      modal.find('#servidor-edit').val(valorServidor);
+      modal.find('#id-edit').val(valorId);
+      modal.find('#nome-edit').val(valorNome);
       modal.find('#rg-edit').val(valorRg);
       modal.find('#cpf-edit').val(valorCpf);
       modal.find('#titulo_eleitor-edit').val(valorTituloEleitor);
@@ -162,18 +167,32 @@ document.onkeydown = function(evt) {
       modal.find('#telefone2-edit').val(valorTelefone2);
       modal.find('#siape-edit').val(valorSiape);
       modal.find('#email-edit').val(valorEmail);
+
       modal.find('#escolaridade-edit').val(valorEscolaridade);
-      $( "#escolaridade-edit" ).chosen();
-      modal.find('#setor-edit').val(valorSetor);
-      $( "#setor-edit" ).chosen();
-      modal.find('#lotacao-edit').val(valorLotacao);
-      $( "#lotacao-edit" ).chosen();
-      modal.find('#quadro-edit').val(valorQuadro);
-      $( "#quadro-edit" ).chosen();
-      modal.find('#cargo-edit').val(valorCargo);
-      $( "#cargo-edit" ).chosen();
-      modal.find('#regime-edit').val(valorRegime);
-      $( "#regime-edit" ).chosen();
+      modal.find("#escolaridade-edit").chosen().change();
+      modal.find("#escolaridade-edit").trigger("chosen:updated");
+
+      modal.find('#setor-edit').val(valorSetor).change();
+      modal.find("#setor-edit").chosen().change();
+      modal.find("#setor-edit").trigger("chosen:updated");
+
+      modal.find('#lotacao-edit').val(valorLotacao).change();
+      modal.find("#lotacao-edit").chosen().change();
+      modal.find("#lotacao-edit").trigger("chosen:updated");
+
+      modal.find('#quadro-edit').val(valorQuadro).change();
+      modal.find("#quadro-edit").chosen().change();
+      modal.find("#quadro-edit").trigger("chosen:updated");
+
+
+      modal.find('#cargo-edit').val(valorCargo).change();
+      modal.find("#cargo-edit").chosen().change();
+      modal.find("#regime-edit").trigger("chosen:updated");    
+
+      modal.find('#regime-edit').val(valorRegime).change();
+      modal.find("#regime-edit").chosen().change();
+      modal.find("#regime-edit").trigger("chosen:updated");
+      
       modal.find('#data_posse-edit').val(valorDataPosse);
       modal.find('#data_exercicio-edit').val(valorDataExercicio);
   });

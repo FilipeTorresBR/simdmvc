@@ -12,7 +12,7 @@ class Cargo {
 
 	public function Listar(){
 		try{
-			$sql = $this->pdo->prepare("SELECT nome, criacao, modificacao FROM cargo ORDER BY(nome)");
+			$sql = $this->pdo->prepare("SELECT id, nome, criacao, modificacao FROM cargo ORDER BY(nome)");
 			$sql->execute();
 			return $sql->fetchAll(PDO::FETCH_OBJ);
 		}catch(Exception $e){

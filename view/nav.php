@@ -17,6 +17,7 @@ if ($_SESSION['administrador'] == "1") {
 	  <link rel="stylesheet" type="text/css" href="assets/css/w3.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/usuario.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/simd.css">
+	  <link rel="stylesheet" type="text/css" href="assets/css/chosen.jquery.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/cadas.css">
 	  <link rel="stylesheet" type="text/css" href="assets/fontawesome/css/all.css">
 	</head>
@@ -61,3 +62,4 @@ if ($_SESSION['administrador'] == "1") {
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/modal.js"></script>
 <script type="text/javascript" src="assets/js/simd.js"></script>
+<script type="text/javascript" src="assets/js/chosen.jquery.js"></script>
