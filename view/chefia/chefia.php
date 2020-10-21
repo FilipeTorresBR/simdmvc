@@ -1,6 +1,6 @@
 <div class="list-options-position">
 	<form>
-		<a <?php echo $display;?> href="#" class="btn-pattern green">Cadastrar</a>
+		<a id="<?php echo $display;?> cadastrar" href="#" class="btn-pattern green" cadastrar>Cadastrar</a>
 		<label for="choose-results"></label>
 		<select name="choose-results" class="choose-results" required>
 			<option value="20" <?php if($qnt_result_pg == "20"){echo "selected";}?>>Exibir 20 resultados</option>
@@ -26,24 +26,22 @@
 	<tbody>	
 		<?php	foreach($this->model->Listar() as $r): ?>
 		<tr>
-      <td id="<?php echo $display ?>">
-      	<div class="tooltip green">
-      		<span class="tooltiptext green">Editar dados</span>
-      		<a href = "cadastro/edicao_chefia.php?q=<?php echo $r->siape; ?>" class="btn-pattern green">
-      			<i class="fa fa-pencil-alt"></i>
-      		</a>
-      	</div>
-      </td>
+      <td class="icon" id="<?php echo $display;?>">
+				<div class="tooltip green">
+					<span class="tooltiptext">Editar dados</span>
+					<a href="#" data-id="<?php echo $r->id_chefia; ?>" data-setor="<?php echo $r->id_setor; ?>" data-siape="<?php echo $r->siape; ?>" data-inicio_vigencia="<?php echo $r->inicio_vigencia; ?>" data-portaria="<?php echo $r->portaria; ?>" editar-modal="tem certeza" class="btn-pattern green">
+						<i class="fa fa-pencil-alt"></i>
+					</a>
+				</div>
+			</td>
 			<td><?php echo $r->Servidor; ?></td>
 			<td><?php echo $r->siape; ?></td>
 			<td><?php echo $r->Setor; ?></td>
 			<td><?php echo $r->portaria; ?></td>
-			<td><?php echo date('d/m/Y', strtotime($r->inicio_vigencia)); ?></td>', 
-			<td><?php echo date("d/m/Y H:i:s", strtotime($r->modificacao)); ?></td>',
-			<td><?php echo date("d/m/Y H:i:s", strtotime($r->criacao)); ?></td>',
+			<td><?php echo date('d/m/Y', strtotime($r->inicio_vigencia)); ?></td>
+			<td><?php echo date("d/m/Y H:i:s", strtotime($r->modificacao)); ?></td>
+			<td><?php echo date("d/m/Y H:i:s", strtotime($r->criacao)); ?></td>
 	  </tr>
 <?php endforeach; ?>
 	</tbody>
 </table>
-</body>
-</html>

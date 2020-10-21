@@ -1,49 +1,21 @@
-<?php
-session_start();
-if(!isset($_SESSION["nome"]) || !isset($_SESSION["senha"])) {
-  header ("Location: ../../login/login.php?erro-insira-seu-login");
-}
-
-include_once "../../login/conexao.php";
-include_once "../../pages.php";
-include_once "../../default.php";
-
-$idSIAPE = $_GET['q'];
-$query = mysqli_query($con, "SELECT * FROM chefia WHERE siape=$idSIAPE");
-$row = mysqli_fetch_assoc($query);
-
-?>
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title>SIMD</title>
-  <meta charset="utf-8">
-  <link rel="shortcut icon" href="../../img/fav.ico" type="image/x-icon" />
-  <link rel="stylesheet" type="text/css" href="../../css/css.css">
-  <link rel="stylesheet" type="text/css" href="../../css/cadas.css">
-  <link rel="stylesheet" type="text/css" href="../../css/chosen.css">
-  <link rel="stylesheet" type="text/css" href="../../fontawesome/css/all.css">
-</head>
-<body>
 <form id="user_form" class="box formcad" action="editando_chefia.php" method="post" style="width: 50%;">
 <h2>ALTERAR CHEFIA</h2>
 
-<div class="campo">
 	<input type="hidden" name="id" value="<?php echo $idSIAPE; ?>">
-<label>Chefe:</label><br> 
-	<select name="siape" id="siape" class="chosen-select" required>
-	<option>Selecione</option>
-	<?php 
-	$servidor_select = "SELECT * FROM servidor";
-	$result_servidor = mysqli_query($con, $servidor_select);
-	while ($row_servidor = mysqli_fetch_assoc($result_servidor)) {
-	?>
-	<option value="<?php echo $row_servidor['siape'];?>"
-	<?php if ($row_servidor['siape'] == $row['siape']){
-		echo "selected";
-	}
-	?>>
+<div class="campo">
+	<label>Chefe:</label><br> 
+		<select name="siape" id="siape" class="chosen-select" required>
+			<option>Selecione</option>
+			<?php 
+			$servidor_select = "SELECT * FROM servidor";
+			$result_servidor = mysqli_query($con, $servidor_select);
+			while ($row_servidor = mysqli_fetch_assoc($result_servidor)) {
+			?>
+			<option value="<?php echo $row_servidor['siape'];?>"
+			<?php if ($row_servidor['siape'] == $row['siape']){
+				echo "selected";
+			}
+			?>>
 
 	<?php echo $row_servidor['siape'] . ' - ' . $row_servidor['nome'];?>
 			
@@ -51,6 +23,8 @@ $row = mysqli_fetch_assoc($query);
 	<?php } ?>
 	</select>
 </div>
+
+
 <div class="campo">
 <label>Setor: <?php echo $ser_setor; ?></label><br> 
 	<select name="setor" id="setor" class="chosen-select" required>

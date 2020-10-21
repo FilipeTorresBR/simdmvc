@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>SIMD</title>
-	<meta charset="utf-8">
-	<link rel="shortcut icon" href="assets/img/fav.ico" type="image/x-icon" />
-	<link rel="stylesheet" type="text/css" href="assets/css/w3.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/chosen.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/cadas.css"> 
-	<link rel="stylesheet" type="text/css" href="assets/css/usuario.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/simd.css">
-	<link rel="stylesheet" type="text/css" href="assets/fontawesome/css/all.css">
-</head>
-<body>
 <div class="list-options-position">
 	<form>
-		<a href="pessoal.php" class="btn-pattern blue">Mostrar dados Pessoais</a>
+		<a href="?c=<?php echo base64_encode("Servidores"); ?>&a=<?php echo base64_encode("pessoal") ?>" class="btn-pattern blue">Mostrar dados Pessoais</a>
 		<a <?php echo $display;?> href="#" id="cadastrar" class="btn-pattern green">Cadastrar</a>
 		<label for="choose-results"></label>
 		<select name="choose-results" class="choose-results" required>
@@ -29,7 +15,6 @@
 	<thead>
 		<tr>
 			<th <?php echo $display;?>>Ação</th>
-			<th>#</th>
 			<th class="thsticky">Nome do servidor</th>
 			<th>SIAPE</th> 
 			<th>Cargo</th>
@@ -73,9 +58,7 @@
 		<?php endforeach; ?>   
 	</tbody>
 </table> 
-<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/modal.js"></script>
-<script type="text/javascript" src="assets/js/chosen.jquery.js"></script>
+
 <script type="text/javascript">
 
 const cpf = document.querySelector("#cpf");

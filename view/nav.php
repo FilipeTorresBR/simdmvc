@@ -17,7 +17,7 @@ if ($_SESSION['administrador'] == "1") {
 	  <link rel="stylesheet" type="text/css" href="assets/css/w3.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/usuario.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/simd.css">
-	  <link rel="stylesheet" type="text/css" href="assets/css/chosen.jquery.css">
+	  <link rel="stylesheet" type="text/css" href="assets/css/chosen.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/cadas.css">
 	  <link rel="stylesheet" type="text/css" href="assets/fontawesome/css/all.css">
 	</head>

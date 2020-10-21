@@ -19,5 +19,13 @@ class Lotacao {
 			die($e->getMessage());
 		}
 	}
+	public function cadastrar($nome){
+		try{
+			$sql = $this->pdo->prepare("INSERT INTO lotacao (nome) VALUES (?)");
+			$sql->execute(array($nome));
+		}catch(Exception $e){
+			die($e->getMessage());
+		}
+	}
 }
 ?>

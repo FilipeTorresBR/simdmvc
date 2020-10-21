@@ -22,20 +22,17 @@ class Login{
 	}
 	public function Sessao($entrar){
 		try{
-			if ($entrar != null) {
+			if (!$entrar) {
+				header("Location: ?c=".base64_encode('Login'). "&m=".base64_encode("loginerrado"));
+			}else{
 				$_SESSION['id'] = $entrar->id;
 				$_SESSION['nome'] = $entrar->nome;
 				$_SESSION['usuario'] = $entrar->usuario;
 				$_SESSION['administrador'] = $entrar->administrador;
 
-				if ($entrar->administrador) {
-					header("Location: ?c=".base64_encode('Home'));
-
-				}else{
-					header("Location: ?c=".base64_encode('Login'));
-
-				}
+				header("Location: ?c=".base64_encode('Home'));
 			}
+			
 		}catch(Throwable $t){
 			die($t->getMessage());
 		}

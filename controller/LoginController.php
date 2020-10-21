@@ -19,9 +19,13 @@ class LoginController{
 		$usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
 		$senha = md5(filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_STRING));
 
-		$entrar = $this->model->Entrar($usuario, $senha);
-
-		$this->model->Sessao($entrar);
+		if ($usuario == "" || $senha == "") {
+			header('Location: ?m='.base64_encode('campovazio'));
+			die();
+		}else{
+			$entrar = $this->model->Entrar($usuario, $senha);
+			$this->model->Sessao($entrar);
+		}
 	}
 }
 ?>

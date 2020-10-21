@@ -8,7 +8,7 @@
 	<div class="w3-contant" style="margin-left:70px;">
 	  <form class="box" action="?c=<?php echo base64_encode("Usuarios"); ?>&a=<?php echo base64_encode("excluirUsuario") ?>" method="post" enctype="multipart/form-data">
 		<p>Você tem certeza que deseja excluir o usuário <strong id=usuario-del></strong> (<strong id="nome-del"></strong>)? Essa ação não poderá ser desfeita.</p><br>
-		  <input type="text" name="id-input" id="id-input">
+		  <input type="hidden" name="id-input" id="id-input">
 		<label for="nomecompleto">Nome Completo:</label><br>
 		  <input type="text" name="nome-input" id="nome-input" readonly /><br>
 		<label for="usuario">Usuário:</label><br>
@@ -16,7 +16,7 @@
 	</div>
 		<footer class="w3-container">
 			<button type="submit" class="btn-pattern red" id="dataConfirmOK">Excluir</button>
-			<button class="btn-pattern blue" id="cancelar" data-dismiss="modal">Cancelar</button><br><br>
+			<button class="btn-pattern blue" id="cancelar">Cancelar</button><br><br>
 		</footer>
 		</form>
 	</div>

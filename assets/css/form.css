@@ -4,6 +4,12 @@ html{
 img{
 	pointer-events: none;
 }
+.loginerro{
+	text-align: center;
+	color: #ff6961;
+	font-weight: bold;
+	display: inline !important;
+}
 .lateral{
   position: fixed;
   left: 50%;

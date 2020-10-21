@@ -114,7 +114,7 @@
 								<option value="">Selecione</option>
 								<?php foreach($this->lotacao->Listar() as $s): ?>
 								<option value="<?php echo $s->id;?>"><?php echo $s->nome;?></option>
-							<?php endforeach; ?>
+								<?php endforeach; ?>
 							</select>
 						</div>
 

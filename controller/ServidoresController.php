@@ -22,6 +22,12 @@ class ServidoresController{
 		require_once "view/servidores/cadastrar.php";
 		require_once "view/servidores/editar.php";
 	}
+	public function pessoal(){
+		require_once "view/nav.php";
+		require_once "view/servidores/pessoal.php";
+		require_once "view/servidores/cadastrar.php";
+		require_once "view/servidores/editar.php";
+	}
 	public function Listar(){
 		$this->model->Listar();
 	}

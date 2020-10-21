@@ -1,6 +1,38 @@
 $(document).ready(function(){
 
-  $('a[delete-confirm]').click(function(){
+document.onkeydown = function(event) {
+    evt = evt || window.event;
+    var isEscape = false;
+    if ("key" in evt) {
+        isEscape = (evt.key === "Escape" || evt.key === "Esc");
+    } else {
+        isEscape = (evt.keyCode === 27);
+    }
+    if (isEscape) {
+      $('.w3-modal').css('display','none');
+    }
+};
+    $('#cancelar').click(function() {
+      $('.w3-modal').css('display','none');
+    });
+    $('#sair').click(function() {
+      $('.w3-modal').css('display','none');
+    });
+
+  //cadastrar
+  $('a[cadastrar]').click(function(event) {
+    $('.w3-modal').css('display','block');
+    
+    $('#cancelar').click(function() {
+      $('.w3-modal').css('display','none');
+    });
+    $('#sair').click(function() {
+      $('.w3-modal').css('display','none');
+    });
+  });
+
+  //deletar usuario
+  $('a[delete-confirm]').click(function(event){
     $('#cancelar').click(function() {
       $('#excluir-usuario').css('display','none');
     });
@@ -15,7 +47,7 @@ $(document).ready(function(){
     var valorNome = button.data('nome');
     var valorUsuario = button.data('usuario');
 
-    var modal = $(document);   
+    var modal = $(document);
     modal.find('#nome-del').text(valorNome);
     modal.find('#usuario-del').text(valorUsuario);
     modal.find('#id-input').val(valorId);
@@ -23,6 +55,41 @@ $(document).ready(function(){
     modal.find('#usuario-input').val(valorUsuario);
   });
 
+  $('a[editar-modal]').click(function(event){
+    $('#edit-chefia-modal').css('display','block');
+
+    $('#cancelar-edit').click(function() {
+      $('#edit-chefia-modal').css('display','none');
+    });
+    $('#sair-edit').click(function() {
+      $('#edit-chefia-modal').css('display','none');
+    });
+
+      var button = $(this);
+      var valorId = button.data('id');
+      var valorSetor = button.data('setor');
+      var valorSiape = button.data('siape');
+      var valorVigencia = button.data('inicio_vigencia');
+      var valorPortaria = button.data('portaria');
+
+      var modal = $(document);   
+      modal.find('#id').val(valorId);
+
+      modal.find('#setor').val(valorSetor).change();
+      modal.find("#setor").chosen().change();
+      modal.find("#setor").trigger("chosen:updated");
+
+      modal.find('#siape').val(valorSiape).change();
+      modal.find("#siape").chosen().change();
+      modal.find("#siape").trigger("chosen:updated");
+
+
+      modal.find('#inicio_vigencia').val(valorVigencia);
+      modal.find('#portaria').val(valorPortaria);
+
+  });
+
+  //editar usuario
   $('a[edit-confirm]').click(function(event){
     $('#cancelar').click(function() {
       $('#edit-modal').css('display','none');
@@ -52,6 +119,9 @@ $(document).ready(function(){
         modal.find('#comum').val(valorTipo);
       } 
 
+
+
+      //alterar senha do usuario
     $('a[change-pass]').click(function(event){
 
       $('#edit-modal').css('display','none');
@@ -73,40 +143,6 @@ $(document).ready(function(){
   });
 
 
-  $('#true').click(function(event) {
-    $('#add-user-modal').css('display','block');
-    
-    $('#cancelar-add').click(function() {
-      $('#add-user-modal').css('display','none');
-    });
-    $('#sair-add').click(function() {
-      $('#add-user-modal').css('display','none');
-    });
-  });
-
-  $('#cadastrar').click(function(event){
-    $('#add-worker-modal').css('display','block');
-    
-    $('#cancelar-add').click(function() {
-      $('#add-worker-modal').css('display','none');
-    });
-    $('#sair-add').click(function() {
-      $('#add-worker-modal').css('display','none');
-    });
-  });
-
-document.onkeydown = function(evt) {
-    evt = evt || window.event;
-    var isEscape = false;
-    if ("key" in evt) {
-        isEscape = (evt.key === "Escape" || evt.key === "Esc");
-    } else {
-        isEscape = (evt.keyCode === 27);
-    }
-    if (isEscape) {
-      $('.w3-modal').css('display','none');
-    }
-};
   $('a[edit-servidor]').click(function(event){
     $('#cancelar-edit').click(function() {
       $('#edit-worker-modal').css('display','none');
@@ -146,8 +182,6 @@ document.onkeydown = function(evt) {
       var valorRegime = button.data('regime');
       var valorDataPosse = button.data('data_posse');
       var valorDataExercicio = button.data('data_exercicio');
-
-      //alert(valorSetor);
 
       var modal = $(document);   
       modal.find('#id-edit').val(valorId);
@@ -197,25 +231,16 @@ document.onkeydown = function(evt) {
       modal.find('#data_exercicio-edit').val(valorDataExercicio);
   });
 
-  $('a[add-institucional]').click(function(event){
-    $('#cancelar-add').click(function() {
-      $('#add-institucional-modal').css('display','none');
-    });
-    $('#sair-add').click(function() {
-      $('#add-institucional-modal').css('display','none');
-    });
-
-    $('#add-institucional-modal').css('display','block');
-  });
-
   $('a[edit-probative]').click(function(event){
-/*     $('#cancelar').click(function() {
+    $('#cancelar').click(function() {
       $('#edit-modal').css('display','none');
     });
+    
     $('#sair').click(function() {
       $('#edit-modal').css('display','none');
     });
-*/
+    
+
     $('#probative').css('display','block');
       var button = $(this);
       var valorNome = button.data('caralho');
