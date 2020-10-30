@@ -1,5 +1,5 @@
 <div id="edit-worker-modal" class="w3-modal" style="z-index: 22;">
-	<div class="w3-modal-content" style="background: #dedede;" >
+	<div class="w3-modal-content" style="width: 1200px; background: #dedede;" >
 		<header class="w3-container green" style="color: white; background-color: #00c952; cursor: default;">
 			<span id="sair-edit" class="w3-button w3-display-topright">&times;</span>
 			<h2>Editar dados do servidor</h2>

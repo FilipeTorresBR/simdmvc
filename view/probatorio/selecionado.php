@@ -1,6 +1,3 @@
-<?php
-$hoje = date("Y-m-d");
-?>
 <div class="list-options-position">
   <form>
     <label for="choose-results"></label>
@@ -13,20 +10,24 @@ $hoje = date("Y-m-d");
   </form>
 </div>
 <table class="content-table">
-  <thead>
-    <tr>
-      <th>Ação</th>
-      <th class="thsticky">Nome</th>
-      <th>SIAPE</th>
-      <th colspan="2">Primeira Avaliação (0 - 8 meses)</th>
-      <th colspan="2">Segunda Avaliação (8 - 16 meses)</th>
-      <th colspan="2">Terceira Avaliação (16 - 24 meses)</th>
-      <th colspan="2">Quarta Avaliação (24 - 32 meses)</th>
-    </tr>
-  </thead>
-  <tbody>
+	<thead>
+		<tr>
+			<th>Editar</th>
+			<th class="thsticky">Nome do servidor</th>
+			<th>SIAPE</th>
+			<th colspan="2">Primeira Avaliação (0 - 8 meses)</th>
+			<th colspan="2">Segunda Avaliação (8 - 16 meses)</th>
+			<th colspan="2">Terceira Avaliação (16 - 24 meses)</th>
+			<th colspan="2">Quarta Avaliação (24 - 32 meses)</th>
+		</tr>
+	</thead>
+
+	<tbody>
 <?php
-foreach($this->model->Listar() as $r):
+$hoje = date("Y-m-d");
+$siape = base64_decode($_GET['s']);
+//echo $siape;
+foreach($this->model->selecionado($siape) as $r):
 
   if (strtotime($hoje) < strtotime($r->fim1)) {
     $cor1 = 'red_probatorio';
@@ -48,23 +49,16 @@ foreach($this->model->Listar() as $r):
   }else{
     $cor4 = 'green_probatorio';
   }
-
 ?>
-    <tr>
-      <td>
+		<tr>
+			<td>
         <div class="tooltip green">
           <span class="tooltiptext green">Editar dados</span>
           <a href = "#" id="true trigger-probative" class="btn-pattern green" data-nome="<?php echo $r->nome; ?>" data-siape="<?php echo $r->siape; ?>" data-ini1="<?php echo $r->ini1; ?>" data-fim1="<?php echo $r->fim1; ?>" data-ini2="<?php echo $r->ini2; ?>" data-fim2="<?php echo $r->fim2; ?>" data-ini3="<?php echo $r->ini3; ?>" data-fim3="<?php echo $r->fim3; ?>" data-ini4="<?php echo $r->ini4; ?>" data-fim4="<?php echo $r->fim4; ?>" editar-probatorio>
             <i class="fa fa-pencil-alt"></i>
           </a>
         </div>
-        <div class="tooltip blue">
-          <span class="tooltiptext">Estágio Probatório</span>
-          <a href="?c=<?php echo base64_encode("Probatorio"); ?>&a=<?php echo base64_encode("selecionado") ?>&s=<?php echo base64_encode("$r->siape") ?>" class="btn-pattern blue">
-            <i class="fa fa-file"></i>
-          </a>
-        </div> 
-      </td>
+			</td>
       <td class="tdsticky"><?php echo $r->nome; ?></td>
       <td><?php echo $r->siape; ?></td>
       <td id='<?php echo $cor1; ?>'><?php echo date('d/m/Y', strtotime($r->ini1)); ?></td>
@@ -75,8 +69,40 @@ foreach($this->model->Listar() as $r):
       <td id='<?php echo $cor3; ?>'><?php echo date('d/m/Y', strtotime($r->fim3)); ?></td>
       <td id='<?php echo $cor4; ?>'><?php echo date('d/m/Y', strtotime($r->ini4)); ?></td>
       <td id='<?php echo $cor4; ?>'><?php echo date('d/m/Y', strtotime($r->fim4)); ?></td> 
-    </tr>
-<?php endforeach; ?>
+		</tr>
+		<tr>
+			<td colspan="3">
+<?php
+	if ($cor1 == "red_probatorio") { ?>
+		<td colspan="2"><span id='<?php echo $cor1 ?>' href="#" target="_blank">Ainda não está no prazo</span></td>
+	<?php 
+  }else{ ?>
+		<td colspan="2"><a id='<?php echo $cor1 ?>' href="?c=<?php echo base64_encode("Probatorio"); ?>&a=<?php echo base64_encode("ficha"); ?>&s=<?php echo base64_encode($siape); ?>&p=<?php echo base64_encode("1"); ?>" target="_blank">Gerar Primeira Avaliação</a></td>
+  <?php }
+	
+  if ($cor2 == "red_probatorio") { ?>
+		<td colspan="2"><span id='<?php echo $cor2 ?>' href="#" target="_blank">Ainda não está no prazo</span></td>
+	<?php 
+  }else{ ?> 
+		<td colspan="2"><a id='<?php echo $cor2 ?>' href="?c=<?php echo base64_encode("Probatorio"); ?>&a=<?php echo base64_encode("ficha"); ?>&s=<?php echo base64_encode($siape); ?>&p=<?php echo base64_encode("2"); ?>" target="_blank">Gerar Segunda Avaliação</a></td>
+	<?php } 
+	if ($cor3 == "red_probatorio") { ?>
+		<td colspan="2"><span id='<?php echo $cor3 ?>' href="#" target="_blank">Ainda não está no prazo</span></td>
+	<?php 
+  }else{ ?>
+		<td colspan="2"><a id='<?php echo $cor3 ?>' href="?c=<?php echo base64_encode("Probatorio"); ?>&a=<?php echo base64_encode("ficha"); ?>&s=<?php echo base64_encode($siape); ?>&p=<?php echo base64_encode("3"); ?>" target="_blank">Gerar Terceira Avaliação</a></td>
+	<?php }
+	if ($cor4 == "red_probatorio") { ?>
+		<td colspan="2"><span id='<?php echo $cor4 ?>' href="#" target="_blank">Ainda não está no prazo</span></td>
+	<?php }else{ ?>
+		<td colspan="2"><a id='<?php echo $cor4 ?>' href="?c=<?php echo base64_encode("Probatorio"); ?>&a=<?php echo base64_encode("ficha"); ?>&s=<?php echo base64_encode($siape); ?>&p=<?php echo base64_encode("4"); ?>" target="_blank">Gerar Quarta Avaliação</a></td>
+	<?php }
+endforeach; ?>    
+		</tr>
+	</tbody>
 </table>
+<script type="text/javascript">
+ $('.probatorio').addClass('clicked');
+</script>
 </body>
 </html>

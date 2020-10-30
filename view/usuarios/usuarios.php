@@ -38,14 +38,11 @@
 	  </td>
 	  <td class="tdsticky"><?php echo $r->nome; ?></td>
 	  <td><?php echo $r->usuario; ?></td> 
-	  <td><?php echo $r->administrador; ?></td>
+	  <td><?php if($r->administrador == "1"){echo "Administrador";}else{echo "Comum";} ?></td>
 	</tr>    
     <?php endforeach; ?>
   </tbody>
 </table>
-<?php 
-//include_once "../pagination.php";
-?>
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/chosen.jquery.js"></script>
 <script type="text/javascript" src="../js/prism.js"></script>

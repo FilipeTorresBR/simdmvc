@@ -105,11 +105,13 @@
 #red_probatorio{
   color: #ff6961;
   cursor: default;
-  font-weight: bold
+  font-weight: bold;
+  text-align: center !important;
 }
 #green_probatorio{
   color: #04b054;
-  font-weight: bold
+  font-weight: bold;
+	align-content: center !important;
 }
 @keyframes animation {
   from {left: 0px; background-color: transparent;color: transparent;}

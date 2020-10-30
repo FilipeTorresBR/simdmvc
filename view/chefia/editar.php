@@ -6,7 +6,7 @@
   	</header>
 		<div class="w3-contant">
 			<div class="box formcad">
-			  <form action="?c=<?php echo base64_encode("Chefia"); ?>&a=<?php echo base64_encode("editar") ?>" method="POST" >
+			  <form action="?c=<?php echo base64_encode("Chefia"); ?>&a=<?php echo base64_encode("editar") ?>" method="POST">
 				  <input type="hidden" name="id" id="id">
 				<div class="campo">
 					<label for="siape">Nome do Servidor Chefe</label><br>

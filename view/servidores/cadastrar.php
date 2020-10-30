@@ -1,8 +1,8 @@
-<div id="add-worker-modal" class="w3-modal" style="z-index: 22;">
-	<div class="w3-modal-content" style="background: #dedede;" >
+<div id="cadastrar-modal" class="w3-modal" style="z-index: 22;">
+	<div class="w3-modal-content" style="width: 1200px;background: #dedede;" >
 		<header class="w3-container green" style="color: white; background-color: #00c952; cursor: default;">
 			<span id="sair-add" class="w3-button w3-display-topright">&times;</span>
-			<h2>Cadastrar Usuário</h2>
+			<h2>Cadastrar Servidor</h2>
 		</header>
 			<div class="w3-contant">
 				<div class="box formcad">
@@ -164,9 +164,10 @@
 				</div>
 			</div>
 		<footer class="w3-container" style="padding-bottom: 20px;">
-			<button type="submit" class="edit green" id="addConfirm">Salvar</button>
-			<button type="button" class="edit blue" id="cancelar-add" data-dismiss="modal">Cancelar</button>
+			<button type="submit" class="btn-pattern green" id="addConfirm">Salvar</button>
+			<button type="button" class="btn-pattern blue" id="cancelar-add" data-dismiss="modal">Cancelar</button>
 		</footer>
 					</form>
 	</div>
+<br><br><br><br><br><br>
 </div>

@@ -20,6 +20,7 @@ class Pesquisar{
   JOIN setor AS se ON se.id = s.id_setor WHERE s.nome LIKE ? OR s.siape LIKE ?");
 			$sql->execute(array($nome, $siape));
 			return $sql->fetchAll(PDO::FETCH_OBJ);
+
 		}catch(Throwable $t){
 			die($t->getMessage());
 		}

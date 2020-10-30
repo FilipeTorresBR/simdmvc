@@ -1,7 +1,7 @@
 <div class="list-options-position">
 	<form>
 		<a href="?c=<?php echo base64_encode("Servidores"); ?>&a=<?php echo base64_encode("pessoal") ?>" class="btn-pattern blue">Mostrar dados Pessoais</a>
-		<a <?php echo $display;?> href="#" id="cadastrar" class="btn-pattern green">Cadastrar</a>
+		<a <?php echo $display;?> href="#" id="cadastrar" class="btn-pattern green" cadastrar>Cadastrar</a>
 		<label for="choose-results"></label>
 		<select name="choose-results" class="choose-results" required>
 			<option value="20" <?php if($qnt_result_pg == "20"){echo "selected";}?>>Exibir 20 resultados</option>

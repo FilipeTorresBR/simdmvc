@@ -3,18 +3,21 @@ require_once "model/Servidores.php";
 require_once "model/Setor.php";
 require_once "model/Lotacao.php";
 require_once "model/Cargo.php";
+require_once "controller/ProbatorioController.php";
 
 class ServidoresController{
 	private $model;
 	private $setor;
 	private $lotacao;
 	private $cargo;
+	private $probatorio;
 	
 	public function __CONSTRUCT(){
 		$this->model = new Servidores();
 		$this->setor = new Setor();
 		$this->lotacao = new Lotacao();
 		$this->cargo = new Cargo();
+		$this->probatorio = new ProbatorioController();
 	}
 	public function Index(){
 		require_once "view/nav.php";
@@ -60,6 +63,8 @@ class ServidoresController{
 
 		$this->model->atualizar($lotacao, $cargo, $setor, $regime, $quadro, $nome, $rg, $cpf, $titulo_eleitor, $data_nascimento, $mae, $pai, $escolaridade, $email, $estado, $cidade, $bairro, $rua, $numero, $siape, $data_posse, $data_exercicio, $telefone1, $telefone2, $id);
 
+		//$this->probatorio->editarsiape($siape, $id);
+
 	}
 	public function cadastrar(){
 		$lotacao = filter_input(INPUT_POST, 'lotacao', FILTER_SANITIZE_NUMBER_INT);
@@ -84,10 +89,13 @@ class ServidoresController{
 		$siape = filter_input(INPUT_POST, 'siape', FILTER_SANITIZE_NUMBER_INT);
 		$data_posse = filter_input(INPUT_POST, 'data_posse', FILTER_SANITIZE_NUMBER_INT);
 		$data_exercicio = filter_input(INPUT_POST, 'data_exercicio', FILTER_SANITIZE_NUMBER_INT);
+		$data_probatorio = filter_input(INPUT_POST, 'data_probatorio', FILTER_SANITIZE_NUMBER_INT);
 		$telefone1 = filter_input(INPUT_POST, 'telefone1', FILTER_SANITIZE_NUMBER_INT);
 		$telefone2 = filter_input(INPUT_POST, 'telefone2', FILTER_SANITIZE_NUMBER_INT);
 
-		$this->model->cadastrar($lotacao, $cargo, $setor, $regime, $quadro, $nome, $rg, $cpf, $titulo_eleitor, $data_nascimento, $mae, $pai, $escolaridade, $email, $estado, $cidade, $bairro, $rua, $numero, $siape, $data_posse, $data_exercicio, $telefone1, $telefone2);		
+		$this->model->cadastrar($lotacao, $cargo, $setor, $regime, $quadro, $nome, $rg, $cpf, $titulo_eleitor, $data_nascimento, $mae, $pai, $escolaridade, $email, $estado, $cidade, $bairro, $rua, $numero, $siape, $data_posse, $data_exercicio, $telefone1, $telefone2);
+
+		$this->probatorio->cadastrar($siape, $data_probatorio);
 	}
 }
 

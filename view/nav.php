@@ -44,11 +44,11 @@ if ($_SESSION['administrador'] == "1") {
 
 		<nav class="navigation">
 			<div class="nav-buttons">
-				<a href="?c=<?php echo base64_encode('Home'); ?>" class="home"><li>Home</li></a>
-				<a href="?c=<?php echo base64_encode('Usuarios'); ?>" class="users"><li>Usuários</li></a>
-				<a href="?c=<?php echo base64_encode('Probatorio'); ?>" class="probatorio"><li>Estágio Probatório</li></a>
-				<a href="?c=<?php echo base64_encode('Servidores'); ?>" class="servidores"><li>Servidores</li></a>
-				<div onmouseover="MostrarInst()" onmouseleave="OcultarInst()"><a href="#" class="instituicao"><li>Instituição</li></a>
+				<a href="?c=<?php echo base64_encode('Home'); ?>" class="home"><li><i class="fa fa-home"></i> Home</li></a>
+				<a href="?c=<?php echo base64_encode('Usuarios'); ?>" class="users"><li><i class="fa fa-user"></i> Usuários</li></a>
+				<a href="?c=<?php echo base64_encode('Probatorio'); ?>" class="probatorio"><li><i class="fa fa-calendar"></i> Estágio Probatório</li></a>
+				<a href="?c=<?php echo base64_encode('Servidores'); ?>" class="servidores"><li><i class="fa fa-users"></i> Servidores</li></a>
+				<div onmouseover="MostrarInst()" onmouseleave="OcultarInst()"><a href="#" class="instituicao"><li><i class="fa fa-bars"></i> Instituição</li></a>
 				  <ul class="inst-drop">
 						<li><a href="?c=<?php echo base64_encode('Chefia'); ?>">Chefias</a></li>
 						<li><a href="?c=<?php echo base64_encode('Setor'); ?>">Setores</a></li>

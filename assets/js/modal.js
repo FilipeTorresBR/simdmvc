@@ -21,13 +21,13 @@ document.onkeydown = function(event) {
 
   //cadastrar
   $('a[cadastrar]').click(function(event) {
-    $('.w3-modal').css('display','block');
+    $('#cadastrar-modal').css('display','block');
     
     $('#cancelar').click(function() {
-      $('.w3-modal').css('display','none');
+      $('#cadastrar-modal').css('display','none');
     });
     $('#sair').click(function() {
-      $('.w3-modal').css('display','none');
+      $('#cadastrar-modal').css('display','none');
     });
   });
 
@@ -231,19 +231,19 @@ document.onkeydown = function(event) {
       modal.find('#data_exercicio-edit').val(valorDataExercicio);
   });
 
-  $('a[edit-probative]').click(function(event){
+  $('a[editar-probatorio]').click(function(event){
     $('#cancelar').click(function() {
-      $('#edit-modal').css('display','none');
+      $('.w3-modal').css('display','none');
     });
     
     $('#sair').click(function() {
-      $('#edit-modal').css('display','none');
+      $('.w3-modal').css('display','none');
     });
     
 
-    $('#probative').css('display','block');
+    $('.w3-modal').css('display','block');
       var button = $(this);
-      var valorNome = button.data('caralho');
+      var valorNome = button.data('nome');
       var valorSiape = button.data('siape');
       var valorIni1 = button.data('ini1');
       var valorFim1 = button.data('fim1');
