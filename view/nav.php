@@ -28,13 +28,6 @@ if ($_SESSION['administrador'] == "1") {
 				<input type="text" name="search" class="search" placeholder="Pesquisar por nome ou SIAPE" autocomplete="off" required>
 				<button type="submit" class="search-button fa fa-search"></button>
 			</form>
-				<!--div onmouseover="MostrarUser()" onmouseleave="OcultarUser()"><button type="button" class="user-icon">FT</button>
-					<ul class="user-drop">
-						<li>Alterar dados</li>
-						<li>Escolher tema</li>
-						<li>Sair</li>
-					</ul>
-				</div-->
 		</header>
 
 		<div class="brand">
@@ -56,6 +49,7 @@ if ($_SESSION['administrador'] == "1") {
 						<li><a href="?c=<?php echo base64_encode('Lotacao'); ?>">Lotações</a></li> 
 					</ul>
 				</div>
+				<a href="?c=<?php echo base64_encode('Login'); ?>&a=<?php echo base64_encode('Logout') ?>" class="sair"><li><i class="fa fa-sign-out-alt"></i> Sair</li></a>
 			</div>
 		</nav>
 	</div>

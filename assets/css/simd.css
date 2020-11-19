@@ -137,6 +137,10 @@ body{
   color: #00c952;
   list-style-type: disc;
 }
+.sair{
+  color: red;
+  list-style-type: disc;
+}
 .nav-buttons .clicked {
   background: #f7f7f7;
   color: #000;

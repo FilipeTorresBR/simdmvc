@@ -27,5 +27,13 @@ class LoginController{
 			$this->model->Sessao($entrar);
 		}
 	}
+	public function Logout(){
+		$_SESSION['id'] = "";
+		$_SESSION['nome'] = "";
+		$_SESSION['usuario'] = "";
+		$_SESSION['administrador'] = "";
+
+		$this->model->Logout();
+	}
 }
 ?>

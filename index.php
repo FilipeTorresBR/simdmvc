@@ -1,4 +1,6 @@
 <?php
+//echo hash("sha256","Filipe");
+
 session_start();
 require_once "model/Conexao.php";
 

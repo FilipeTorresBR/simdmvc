@@ -37,6 +37,10 @@ class Login{
 			die($t->getMessage());
 		}
 	}
+	public function Logout(){
+		$this->pdo = "";
+		header("Location: view/login/loading_off.php");
+	}
 }
 
 ?>
