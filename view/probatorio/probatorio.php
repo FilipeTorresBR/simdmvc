@@ -78,5 +78,8 @@ foreach($this->model->Listar() as $r):
     </tr>
 <?php endforeach; ?>
 </table>
+<script type="text/javascript">
+    $('.probatorio').addClass('clicked');
+</script>
 </body>
 </html>

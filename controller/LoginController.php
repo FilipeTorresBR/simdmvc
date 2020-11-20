@@ -33,7 +33,13 @@ class LoginController{
 		$_SESSION['usuario'] = "";
 		$_SESSION['administrador'] = "";
 
-		$this->model->Logout();
+		header("Location: ?c=".base64_encode('Login')."&a=".base64_encode('loadingOff'));
+	}
+	public function loadingOn(){
+		require_once "view/login/loading_on.php";
+	}
+	public function loadingOff(){
+		require_once "view/login/loading_off.php";
 	}
 }
 ?>

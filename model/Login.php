@@ -30,7 +30,7 @@ class Login{
 				$_SESSION['usuario'] = $entrar->usuario;
 				$_SESSION['administrador'] = $entrar->administrador;
 
-				header("Location: ?c=".base64_encode('Home'));
+				header("Location: ?c=".base64_encode('Login'). "&a=".base64_encode("loadingOn"));
 			}
 			
 		}catch(Throwable $t){
@@ -39,7 +39,7 @@ class Login{
 	}
 	public function Logout(){
 		$this->pdo = "";
-		header("Location: view/login/loading_off.php");
+		header("Location: ?c=".base64_encode('Login'). "&a=".base64_encode("Logout"));
 	}
 }
 

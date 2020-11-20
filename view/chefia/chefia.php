@@ -45,3 +45,8 @@
 <?php endforeach; ?>
 	</tbody>
 </table>
+<script type="text/javascript">
+	$('.instituicao').addClass('clicked');
+</script>
+</body>
+</html>

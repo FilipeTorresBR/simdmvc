@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Bem Vindo ao SIMD</title>
-	<link rel="shortcut icon" href="../../assets/img/fav.ico" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="../../assets/css/simd.css">
+	<link rel="shortcut icon" href="assets/img/fav.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="assets/css/simd.css">
 </head>
 <body>
 <style type="text/css">
@@ -28,9 +28,9 @@ p{
 }
 </style>
 <div class="animation">
-<img style="text-align: center;" src="../../assets/img/simd.png" width="200" height="200">
+<img style="text-align: center;" src="assets/img/simd.png" width="200" height="200">
 </div>
 <p>SIMD</p>
-<?php header("refresh:4;url=../../index.php"); ?>
+<?php header("refresh:4;url=?c=". base64_encode('Login')); ?>
 </body>
 </html>
