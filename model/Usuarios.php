@@ -47,12 +47,20 @@ class Usuarios {
 	}
 	public function excluirUsuario($id, $nome, $usuario){
 		try{
-			$sql = $this->pdo->prepare("DELETE FROM usuario WHERE 
-				id = ? AND 
-				nome = ? AND 
-				usuario = ?");
+			$qtd_adm = $this->pdo->prepare("SELECT administrador FROM usuario WHERE administrador = 1");
+			$qtd_adm->execute();
+			$result = $qtd_adm->fetchAll(PDO::FETCH_OBJ);
 
-			$sql->execute(array($id, $nome, $usuario));
+			if (count($result) == 1) {
+				die("É necessário haver pelo menos um usuário administrador". count($result));
+			}else{
+				$sql = $this->pdo->prepare("DELETE FROM usuario WHERE 
+					id = ? AND 
+					nome = ? AND 
+					usuario = ?");
+
+				$sql->execute(array($id, $nome, $usuario));
+			}		
 		}catch(Exception $e){
 			die($e->getMessage());
 		}

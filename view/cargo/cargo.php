@@ -1,6 +1,6 @@
 <div class="list-options-position">
   <form>
-    <a id="<?php echo $display; ?>" cadastrar href="#" class="btn-pattern green">Cadastrar um Cargo</a>
+    <a id="<?php echo $display; ?>" href="#" class="btn-pattern green" cadastrar-cargo>Cadastrar um Cargo</a>
     <label for="choose-results"></label>
     <select name="choose-results" class="choose-results" required>
       <option value="20" <?php if($qnt_result_pg == "20"){echo "selected";}?>>Exibir 20 resultados</option>
@@ -29,5 +29,3 @@
 <script type="text/javascript">
   $('.instituicao').addClass('clicked');
 </script>
-</body>
-</html>

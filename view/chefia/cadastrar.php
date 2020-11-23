@@ -1,7 +1,7 @@
-<div id="edit-chefia-modal" class="w3-modal" style="z-index: 10;">
+<div id="cadastrar-chefia-modal" class="w3-modal" style="z-index: 10;">
   <div class="w3-modal-content" style="width: 920px;background: #dedede;" >
   	<header class="w3-container green" style="color: white; background-color: #00c952; cursor: default;">
-			<span id="sair" class="w3-button w3-display-topright">&times;</span>
+			<span class="w3-button w3-display-topright" sair>&times;</span>
 			<h2>Cadastrar Dados Usuário</h2>
   	</header>
 		<div class="w3-contant">
@@ -37,7 +37,7 @@
 			</div>
 			<footer class="w3-container" style="padding-bottom: 20px;">
 			  <button style="float: right;" type="submit" class="btn-pattern green">Editar</button>
-			  <button style="float: right;" type="button" class="btn-pattern blue" id="cancelar" data-dismiss="modal">Cancelar</button>
+			  <button style="float: right;" type="button" class="btn-pattern blue" cancelar>Cancelar</button>
 			</footer>
 			</form>
 		</div>

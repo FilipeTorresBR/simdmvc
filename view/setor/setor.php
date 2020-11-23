@@ -1,6 +1,6 @@
 <div class="list-options-position">
   <form>
-    <a id="<?php echo $display; ?>" cadastrar href="#" class="btn-pattern green">Cadastrar um Setor</a>
+    <a id="<?php echo $display; ?>" href="#" class="btn-pattern green" cadastrar-setor>Cadastrar um Setor</a>
     <label for="choose-results"></label>
     <select name="choose-results" class="choose-results" required>
       <option value="15" <?php if($qnt_result_pg == "15"){echo "selected";}?>>Exibir 15 resultados</option>

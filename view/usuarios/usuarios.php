@@ -1,6 +1,6 @@
 <div class="list-options-position">
 	<form>
-	<a add-user="Tem Certeza?" href="#" class="btn-pattern green" id="<?php echo $display; ?>">Cadastrar</a>
+	<a href="#" class="btn-pattern green" id="<?php echo $display; ?>" cadastrar-usuario>Cadastrar</a>
 		<label for="choose-results"></label>
 		<select name="choose-results" class="choose-results" required>
 			<option value="20" <?php if($qnt_result_pg == "20"){echo "selected";} ?>>Exibir 20 resultados</option>
@@ -43,13 +43,6 @@
     <?php endforeach; ?>
   </tbody>
 </table>
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="../js/chosen.jquery.js"></script>
-<script type="text/javascript" src="../js/prism.js"></script>
-<script type="text/javascript" src="../js/init.js"></script>
-<script type="text/javascript" src="../js/modal.js"></script>
 <script type="text/javascript">
 	$('.users').addClass('clicked');
 </script>
-</body>
-</html>

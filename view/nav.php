@@ -22,6 +22,27 @@ if ($_SESSION['administrador'] == "1") {
 	  <link rel="stylesheet" type="text/css" href="assets/fontawesome/css/all.css">
 	</head>
 <body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 	<div class="container">
 		<header class="top-bar">
 			<form title="search" action="?c=<?php echo base64_encode('Pesquisar'); ?>" method="post" style="display: inline;">

@@ -12,34 +12,39 @@ document.onkeydown = function(event) {
       $('.w3-modal').css('display','none');
     }
 };
-    $('#cancelar').click(function() {
+    $('button[cancelar]').click(function() {
       $('.w3-modal').css('display','none');
     });
-    $('#sair').click(function() {
+    $('span[sair]').click(function() {
       $('.w3-modal').css('display','none');
     });
 
-  //cadastrar
-  $('a[cadastrar]').click(function(event) {
-    $('#cadastrar-modal').css('display','block');
-    
-    $('#cancelar').click(function() {
-      $('#cadastrar-modal').css('display','none');
-    });
-    $('#sair').click(function() {
-      $('#cadastrar-modal').css('display','none');
-    });
+//////////////////////////////CADASTROS//////////////////////////////////////////////////////////////////////////////////////
+  $('a[cadastrar-usuario]').click(function(event) {
+    $('#cadastrar-usuario-modal').css('display','block');
   });
 
-  //deletar usuario
-  $('a[delete-confirm]').click(function(event){
-    $('#cancelar').click(function() {
-      $('#excluir-usuario').css('display','none');
-    });
-    $('#sair').click(function() {
-      $('#excluir-usuario').css('display','none');
-    });
+  $('a[cadastrar-servidor]').click(function(event) {
+    $('#cadastrar-servidor-modal').css('display','block');
+  });
+  
+  $('a[cadastrar-chefia]').click(function(event) {
+    $('#cadastrar-chefia-modal').css('display','block');
+  });
+  
+  $('a[cadastrar-cargo]').click(function(event) {
+    $('#cadastrar-cargo-modal').css('display','block');
+  });
 
+  $('a[cadastrar-setor]').click(function(event) {
+    $('#cadastrar-setor-modal').css('display','block');
+  });
+
+  $('a[cadastrar-lotacao]').click(function(event) {
+    $('#cadastrar-lotacao-modal').css('display','block');
+  });
+////////////////////////////////EXCLUSÕES////////////////////////////////////////////////////////////////////////////////////
+  $('a[delete-confirm]').click(function(event){
     $('#excluir-usuario').css('display','block');
 
     var button = $(this);
@@ -54,16 +59,9 @@ document.onkeydown = function(event) {
     modal.find('#nome-input').val(valorNome);
     modal.find('#usuario-input').val(valorUsuario);
   });
-
+////////////////////////////////EDIÇÕES////////////////////////////////////////////////////////////////////////////////////
   $('a[editar-modal]').click(function(event){
     $('#edit-chefia-modal').css('display','block');
-
-    $('#cancelar-edit').click(function() {
-      $('#edit-chefia-modal').css('display','none');
-    });
-    $('#sair-edit').click(function() {
-      $('#edit-chefia-modal').css('display','none');
-    });
 
       var button = $(this);
       var valorId = button.data('id');
@@ -83,21 +81,13 @@ document.onkeydown = function(event) {
       modal.find("#siape").chosen().change();
       modal.find("#siape").trigger("chosen:updated");
 
-
       modal.find('#inicio_vigencia').val(valorVigencia);
       modal.find('#portaria').val(valorPortaria);
 
   });
 
-  //editar usuario
   $('a[edit-confirm]').click(function(event){
-    $('#cancelar').click(function() {
-      $('#edit-modal').css('display','none');
-    });
-    $('#sair').click(function() {
-      $('#edit-modal').css('display','none');
-    });
-
+    
     $('#edit-modal').css('display','block');
       var button = $(this);
       var valorId = button.data('id');

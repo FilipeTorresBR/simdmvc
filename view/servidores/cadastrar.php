@@ -1,7 +1,7 @@
-<div id="cadastrar-modal" class="w3-modal" style="z-index: 22;">
+<div id="cadastrar-servidor-modal" class="w3-modal" style="z-index: 22;">
 	<div class="w3-modal-content" style="width: 1200px;background: #dedede;" >
 		<header class="w3-container green" style="color: white; background-color: #00c952; cursor: default;">
-			<span id="sair-add" class="w3-button w3-display-topright">&times;</span>
+			<span class="w3-button w3-display-topright" sair>&times;</span>
 			<h2>Cadastrar Servidor</h2>
 		</header>
 			<div class="w3-contant">
@@ -164,8 +164,8 @@
 				</div>
 			</div>
 		<footer class="w3-container" style="padding-bottom: 20px;">
-			<button type="submit" class="btn-pattern green" id="addConfirm">Salvar</button>
-			<button type="button" class="btn-pattern blue" id="cancelar-add" data-dismiss="modal">Cancelar</button>
+			<button type="submit" class="btn-pattern green">Salvar</button>
+			<button type="button" class="btn-pattern blue" cancelar>Cancelar</button>
 		</footer>
 					</form>
 	</div>

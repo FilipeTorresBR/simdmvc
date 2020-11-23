@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cu</title>
+</head>
+<body>
+<style type="text/css">
+.square{
+    width: 23vw;
+    height:13vw; /* A mágica está aqui */
+    float: right;
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    border-radius: 5px;
+}
+.block{
+  position: absolute;
+  text-align: center;
+  background: #1a1a1a;
+  width: 100%;
+  height: 100%;
+}
+ 
+.block:before {
+  content: '';
+  display: inline-block;
+  height: 100%; 
+  vertical-align: middle;
+  margin-right: -0.25em;
+ }
+ 
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+  width: 80%;
+  background: #222;
+  color: #FFF;
+ }
+</style>
+<div class="square">
+    <div class="block">
+        
+        <div class="centered">
+            <h1>Box 1</h1>
+            <p>Não importa quanto texto eu coloque aqui. Ele vai ficar centralizado</p>
+        </div>
+        
+    </div>
+</body>
+</html>
