@@ -23,6 +23,8 @@ class Cargo {
 		try{
 			$sql = $this->pdo->prepare("INSERT INTO cargo (nome) VALUES (?)");
 			$sql->execute(array($nome));
+			$_SESSION['msg'] = '<div class="notificacao"><div class="notificacao_texto"><p>O cargo ' . $nome . ' foi adicionado.</p></div>';
+			header("Location: ?c=".base64_encode("Cargo"));
 		}catch(Exception $e){
 			die($e->getMessage());
 		}

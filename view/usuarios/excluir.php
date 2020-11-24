@@ -9,6 +9,7 @@
 	  <form class="box" action="?c=<?php echo base64_encode("Usuarios"); ?>&a=<?php echo base64_encode("excluirUsuario") ?>" method="post" enctype="multipart/form-data">
 		<p>Você tem certeza que deseja excluir o usuário <strong id=usuario-del></strong> (<strong id="nome-del"></strong>)? Essa ação não poderá ser desfeita.</p><br>
 		  <input type="hidden" name="id-input" id="id-input">
+		  <input type="hidden" name="administrador-input" id="administrador-input">
 		<label for="nomecompleto">Nome Completo:</label><br>
 		  <input type="text" name="nome-input" id="nome-input" readonly /><br>
 		<label for="usuario">Usuário:</label><br>

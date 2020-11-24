@@ -23,6 +23,8 @@ class Setor {
 		try{
 			$sql = $this->pdo->prepare("INSERT INTO setor (nome) VALUES (?)");
 			$sql->execute(array($nome));
+			$_SESSION['msg'] = '<div class="notificacao"><div class="notificacao_texto"><p>O setor de ' . $nome . ' foi adicionado.</p></div>';
+			header("Location: ?c=".base64_encode("Setor"));
 		}catch(Exception $e){
 			die($e->getMessage());
 		}

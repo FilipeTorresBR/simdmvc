@@ -23,6 +23,8 @@ class Lotacao {
 		try{
 			$sql = $this->pdo->prepare("INSERT INTO lotacao (nome) VALUES (?)");
 			$sql->execute(array($nome));
+			$_SESSION['msg'] = '<div class="notificacao"><div class="notificacao_texto"><p>A lotação ' . $nome . ' foi adicionada.</p></div>';
+			header("Location: ?c=".base64_encode("Lotacao"));
 		}catch(Exception $e){
 			die($e->getMessage());
 		}

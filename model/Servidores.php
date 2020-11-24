@@ -54,6 +54,8 @@ class Servidores {
 				WHERE id        = ?");
 
 			$sql->execute(array($lotacao, $cargo, $setor, $regime, $quadro, $nome, $rg, $cpf, $titulo_eleitor, $data_nascimento, $mae, $pai, $escolaridade, $email, $estado, $cidade, $bairro, $rua, $numero, $siape, $data_posse, $data_exercicio, $telefone1, $telefone2, $id));
+			$_SESSION['msg'] = '<div class="notificacao"><div class="notificacao_texto"><p>Os dados de ' . $nome . ' foram salvos.</p></div>';
+			header("Location: ?c=".base64_encode("Servidores"));
 		}catch(Exception $e){
 			die($e->getMessage());
 		}
@@ -62,6 +64,8 @@ class Servidores {
 		try{
 			$sql = $this->pdo->prepare("INSERT INTO servidor (id_lotacao, id_cargo, id_setor, regime, quadro, nome, rg, cpf, titulo_eleitor, data_nascimento, mae, pai, escolaridade, email, estado, cidade, bairro, rua, numero, siape, data_posse, data_exercicio, telefone1, telefone2) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"); 
 			$sql->execute(array($lotacao, $cargo, $setor, $regime, $quadro, $nome, $rg, $cpf, $titulo_eleitor, $data_nascimento, $mae, $pai, $escolaridade, $email, $estado, $cidade, $bairro, $rua, $numero, $siape, $data_posse, $data_exercicio, $telefone1, $telefone2));
+			$_SESSION['msg'] = '<div class="notificacao"><div class="notificacao_texto"><p>Os dados de ' . $nome . ' foram salvos.</p></div>';
+			header("Location: ?c=".base64_encode("Servidores"));
 		}catch(Exception $e){
 			die($e->getMessage());
 		}

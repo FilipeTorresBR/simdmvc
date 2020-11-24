@@ -37,8 +37,9 @@ class UsuariosController{
 		$id = filter_input(INPUT_POST, 'id-input', FILTER_SANITIZE_STRING);
 		$nome = filter_input(INPUT_POST, 'nome-input', FILTER_SANITIZE_STRING);
 		$usuario = filter_input(INPUT_POST, 'usuario-input', FILTER_SANITIZE_STRING);
+		$administrador = filter_input(INPUT_POST, 'administrador-input', FILTER_SANITIZE_STRING);
 
-		$this->model->excluirUsuario($id, $nome, $usuario);
+		$this->model->excluirUsuario($id, $nome, $usuario, $administrador);
 	}
 }
 ?>

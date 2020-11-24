@@ -33,6 +33,7 @@ class Chefia {
 				WHERE id        = ?");
 
 			$sql->execute(array($setor, $siape, $inicio_vigencia, $portaria, $id));
+			header("Location: ?c=".base64_encode("Chefia"));
 		}catch(Exception $e){
 			die($e->getMessage());
 		}
@@ -41,6 +42,7 @@ class Chefia {
 		try{
 			$sql = $this->pdo->prepare("INSERT INTO chefia (setor, siape, inicio_vigencia, portaria) VALUES (?, ?, ?, ?)");
 			$sql->execute(array($setor, $siape, $inicio_vigencia, $portaria));
+			header("Location: ?c=".base64_encode("Chefia"));
 		}catch(Exception $e){
 			die($e->getMessage());
 		}

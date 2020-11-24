@@ -3,12 +3,12 @@
 		<a href="?c=<?php echo base64_encode("Servidores"); ?>&a=<?php echo base64_encode("pessoal") ?>" class="btn-pattern blue">Mostrar dados Pessoais</a>
 		<a <?php echo $display;?> href="#" class="btn-pattern green" cadastrar-servidor>Cadastrar</a>
 		<label for="choose-results"></label>
-		<select name="choose-results" class="choose-results" required>
+		<select style="opacity: 0;" name="choose-results" class="choose-results" required>
 			<option value="20" <?php if($qnt_result_pg == "20"){echo "selected";}?>>Exibir 20 resultados</option>
 			<option value="30" <?php if($qnt_result_pg == "30"){echo "selected";}?>>Exibir 30 resultados</option>
 			<option value="50" <?php if($qnt_result_pg == "50"){echo "selected";}?>>Exibir 50 resultados</option>
 		</select>
-		<button type="submit" class="btn-pattern blue">IR</button>
+		<button style="opacity: 0;" type="submit" class="btn-pattern blue">IR</button>
 	</form>
 </div>
 <table class="content-table">
@@ -62,3 +62,9 @@
 <script type="text/javascript">
 	$('.servidores').addClass('clicked');
 </script>
+<?php 
+if (isset($_SESSION['msg'])) {
+	echo $_SESSION['msg'];
+	unset($_SESSION['msg']);
+}
+?>

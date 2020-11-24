@@ -32,6 +32,7 @@ class Probatorio {
 				fim4        = ?
 				WHERE siape = ?");
 			$sql->execute(array($ini1, $fim1, $ini2, $fim2, $ini3, $fim3, $ini4, $fim4, $siape));
+			header("Location: ?c=".base64_encode("Probatorio"));
 		}catch(Exception $e){
 			die($e->getMessage());
 		}

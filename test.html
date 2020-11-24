@@ -5,47 +5,34 @@
 </head>
 <body>
 <style type="text/css">
-.square{
-    width: 23vw;
-    height:13vw; /* A mágica está aqui */
-    float: right;
-    position: absolute;
-    bottom: 1px;
-    right: 1px;
-    border-radius: 5px;
-}
-.block{
+.notificacao{
+  width: 30vw;
+  height: 7vw; /* A mágica está aqui */
+  float: right;
   position: absolute;
-  text-align: center;
-  background: #1a1a1a;
-  width: 100%;
-  height: 100%;
+  bottom: 0px;
+  right: 0px;
+  animation: notificacao 5s infinite;
 }
- 
-.block:before {
-  content: '';
-  display: inline-block;
-  height: 100%; 
-  vertical-align: middle;
-  margin-right: -0.25em;
- }
- 
-.centered {
+.notificacao_texto {
+  border-top-left-radius: 5px;
+  border-top: 5px solid #00c952;  
+  padding: 10px;
   display: inline-block;
   vertical-align: middle;
-  width: 80%;
-  background: #222;
-  color: #FFF;
+  width: 100%;
+  text-align: center;
+  background: #f7f7f7;
  }
+@keyframes notificacao{
+  0% {margin-bottom: -35%;opacity: 0; display: none;}
+  25% {margin-bottom: 0px; opacity: 1;}
+  75% {margin-bottom: 0px; opacity: 1;}
+  100% {margin-bottom: -35%;opacity: 0; display: none;}
+}
 </style>
-<div class="square">
-    <div class="block">
-        
-        <div class="centered">
-            <h1>Box 1</h1>
-            <p>Não importa quanto texto eu coloque aqui. Ele vai ficar centralizado</p>
-        </div>
-        
-    </div>
+<div>adsdasdsadasdsdasdasdsdsa</div>
+<div class="notificacao"><div class="notificacao_texto"><p>Os dados de Filipe Kaue Torres Soares foram salvos.</p></div>
+</div>
 </body>
 </html>

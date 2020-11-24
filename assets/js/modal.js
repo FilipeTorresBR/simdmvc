@@ -51,6 +51,7 @@ document.onkeydown = function(event) {
     var valorId = button.data('id');
     var valorNome = button.data('nome');
     var valorUsuario = button.data('usuario');
+    var valorAdministrador = button.data('administrador');
 
     var modal = $(document);
     modal.find('#nome-del').text(valorNome);
@@ -58,6 +59,7 @@ document.onkeydown = function(event) {
     modal.find('#id-input').val(valorId);
     modal.find('#nome-input').val(valorNome);
     modal.find('#usuario-input').val(valorUsuario);
+    modal.find('#administrador-input').val(valorAdministrador);
   });
 ////////////////////////////////EDIÇÕES////////////////////////////////////////////////////////////////////////////////////
   $('a[editar-modal]').click(function(event){
@@ -88,7 +90,7 @@ document.onkeydown = function(event) {
 
   $('a[edit-confirm]').click(function(event){
     
-    $('#edit-modal').css('display','block');
+    $('#edit-chefia-modal').css('display','block');
       var button = $(this);
       var valorId = button.data('id');
       var valorNome = button.data('nome');
