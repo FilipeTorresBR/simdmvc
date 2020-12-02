@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/FilipeTorresBR/simdmvc">
-    <img src="assets/img/simd.png" alt="Logo" width="80" height="80">
+    <img src="assets/img/simd.png" alt="Logo" width="100" height="100">
   </a>
 
   <h3 align="center">SIMD</h3>
