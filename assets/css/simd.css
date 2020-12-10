@@ -211,33 +211,119 @@ body{
       bottom:0;opacity:0
     }
 }
-.notificacao{
-  width: 30vw;
-  height: 7vw; /* A mágica está aqui */
+
+.toast__container {
   float: right;
   position: absolute;
   bottom: 0px;
   right: 0px;
-  opacity: 0;
-  animation-name: notificacao;
-  animation-duration: 5s;
-  animation-iteration-count: 1;
-  z-index: 25;
+  z-index: 44;
+  animation: notificacao 7s 1;
+  animation-fill-mode: forwards;
+  cursor: default;
 }
-.notificacao_texto {
-  border-top-left-radius: 5px;
-  border-top: 5px solid #00c952;  
-  padding: 10px;
+
+@keyframes notificacao {
+  0%   {right: -40vw; opacity: 0;}
+  25%  {right: 0px; opacity: 1;}
+  50%  {right: 0px; opacity: 1;}
+  75%  {right: 0px; opacity: 1;}
+  100% {right: -40vw; opacity: 0;}
+}
+
+.toast__cell{
   display: inline-block;
-  vertical-align: middle;
-  opacity: 0;
-  animation-name: notificacao;
-  animation-duration: 5s;
-  animation-iteration-count: 1;
-  width: 100%;
-  text-align: center;
-  background: #f7f7f7;
- }
+
+}
+
+.add-margin{
+  margin-top:20px;
+}
+
+.toast__svg{
+  fill:#fff;
+}
+
+.toast {
+  text-align:left;
+  padding: 21px 0;
+  background-color:#fff;
+  border-radius:4px;
+  max-width: 500px;
+  top: 0px;
+  position:relative;
+  box-shadow: 1px 7px 14px -5px rgba(0,0,0,0.2);
+}
+
+
+.toast:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  border-top-left-radius:4px;
+  border-bottom-left-radius: 4px;
+
+}
+
+.toast__icon{
+  position:absolute;
+  top:50%;
+  left:22px;
+  transform:translateY(-50%);
+  width:14px;
+  height:14px;
+  padding: 7px;
+  border-radius:50%;
+  display:inline-block;
+}
+
+.toast__type {
+  color: #3e3e3e;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.toast__message {
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #878787;
+}
+
+.toast__content{
+  padding-left:70px;
+  padding-right:60px;
+}
+
+.toast--green .toast__icon{
+  background-color:#00c952;
+}
+
+.toast--green:before{
+  background-color:#00c952;
+}
+
+.toast--blue .toast__icon{
+  background-color:#008CBA;
+}
+
+.toast--blue:before{
+  background-color:#008CBA;
+}
+
+.toast--red .toast__icon{
+  background-color:#ff6961;
+}
+
+.toast--red:before{
+  background-color:#ff6961;
+}
+
+
 @keyframes notificacao{
   0% {margin-bottom: -35%;opacity: 0;}
   25% {margin-bottom: 0px; opacity: 1;}

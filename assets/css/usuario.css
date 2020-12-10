@@ -1,10 +1,7 @@
 .content-table{
 	border-collapse: collapse;
-	margin: 25px 0;
 	font-size: 0.9em;
 	min-width: 400px;
-	margin-left: 17vw;
-	margin-top: 13vh;
 	white-space: nowrap;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 	border-radius: 5px 5px 0 0;	
@@ -48,7 +45,7 @@
 }
 */
 .list-options-position{
-	top: 11.2vh;
+	top: 13.2vh;
 	left: 17vw;
 	position: relative;
 }
@@ -60,16 +57,6 @@
 	color: white;
 	border-radius: 5px;
 	border: 0px;
-}
-.pagination{
-	margin-left: 17vw; 
-	margin-top: 40px;
-	position: relative;
-	margin-bottom: 5vh;
-}
-.pagination #displaing-results{
-	margin-right: 10vw; 
-	font-size: 0.9em;
 }
 .red{
 	background-color: #ff6961;
@@ -106,7 +93,6 @@
   color: #ff6961;
   cursor: default;
   font-weight: bold;
-  text-align: center !important;
 }
 #green_probatorio{
   color: #04b054;
@@ -116,31 +102,4 @@
 @keyframes animation {
   from {left: 0px; background-color: transparent;color: transparent;}
   to {left: 35px;}
-}
-.tooltip {
-	display: inline-block;
-  border: 0 !important;
-  border-radius: 5px;
-}
-
-.tooltip .tooltiptext {
-  position: absolute;
-  visibility: hidden;
-  width: 150px;
-  text-align: center;
-  border-radius: 5px;
-  padding: 5px 0;
-  top: -5px;
-  left: 45px;
-  background-color: white;
-  font-weight: bold;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  animation-name: animation;
-  animation-duration: 0.25s;  
-  animation-delay: 0s;
-  animation-fill-mode: backwards;
-  pointer-events: none;
 }

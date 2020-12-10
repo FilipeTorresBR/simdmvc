@@ -1,17 +1,19 @@
 $(document).ready(function(){
 
 document.onkeydown = function(event) {
-    evt = evt || window.event;
-    var isEscape = false;
-    if ("key" in evt) {
-        isEscape = (evt.key === "Escape" || evt.key === "Esc");
-    } else {
-        isEscape = (evt.keyCode === 27);
-    }
-    if (isEscape) {
-      $('.w3-modal').css('display','none');
-    }
+evt = evt || window.event;
+var isEscape = false;
+
+  if ("key" in evt) {
+      isEscape = (evt.key === "Escape" || evt.key === "Esc");
+  } else {
+      isEscape = (evt.keyCode === 27);
+  }
+  if (isEscape) {
+    $('.w3-modal').css('display','none');
+  }
 };
+  
     $('button[cancelar]').click(function() {
       $('.w3-modal').css('display','none');
     });
@@ -25,6 +27,7 @@ document.onkeydown = function(event) {
   });
 
   $('a[cadastrar-servidor]').click(function(event) {
+
     $('#cadastrar-servidor-modal').css('display','block');
   });
   
@@ -85,12 +88,11 @@ document.onkeydown = function(event) {
 
       modal.find('#inicio_vigencia').val(valorVigencia);
       modal.find('#portaria').val(valorPortaria);
-
   });
 
-  $('a[edit-confirm]').click(function(event){
+  $('a[editar-usuario]').click(function(event){
     
-    $('#edit-chefia-modal').css('display','block');
+    $('#editar-info-usuarios').css('display','block');
       var button = $(this);
       var valorId = button.data('id');
       var valorNome = button.data('nome');

@@ -14,6 +14,6 @@ function OcultarUser() {
   $('.user-drop').removeClass('animate-top');
   $('.user-drop').css('display', 'none');
 }
-setTimeout(function(){
-	$('.notificacao').remove();
-}, 5000);
+$(document).ready( function () {
+    $('#datatable').DataTable();
+} );
