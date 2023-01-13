@@ -15,7 +15,7 @@
 
 <!-- SOBRE O PROJETO -->
 ## Sobre o Projeto
-O Sistema Interno de Manipulação de Dados foi desenvolvido por nove alunos do Instituto Federal do Pará - Campus Tucuruí para servir a Coordenação de Gestão de Pessoas do mesmo. Criado para armazenar e gerênciar os dados pessoais do corpo doscente e administrativo do campus.
+O Sistema Interno de Manipulação de Dados foi desenvolvido por nove alunos do Instituto Federal do Pará - Campus Tucuruí para servir a Coordenação de Gestão de Pessoas do mesmo. Criado para armazenar e gerenciar os dados pessoais do corpo docente e administrativo do campus.
 
   <a href="https://github.com/FilipeTorresBR/simdmvc">
 	<p>Página de Login</p>
